@@ -20,12 +20,10 @@ To help a player along, there are 6 lifelines in total which are listed as below
 | Double Chance | Player would be allowed two chances for the same question |
 ### Technologies
 
-Dillinger uses a number of open source projects to work properly:
-
-* [Angular]
-* [Twitter Bootstrap]
-* [node.js]
-* [jQuery]
+* <a href="https://angular.io/" target="_blank">Angular</a>
+* <a href="https://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>
+* <a href="https://nodejs.org/" target="_blank">Nodejs</a>
+* <a href="https://jquery.com/" target="_blank">JQuery</a>
 
 ### Installation
 
@@ -70,6 +68,6 @@ MIT
 
    [git-repo-url]: <git@github.com:shekhawatbhawani87/kbc-wwtbam.git>
    [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
+   [Twitter Bootstrap]: <https://getbootstrap.com/>
+   [jQuery]: <https://jquery.com>
    [Angular]: <https://angular.io/>
