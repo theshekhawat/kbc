@@ -8,8 +8,8 @@ import { IQuizQuestionsSet } from '../model/IQuizQuestionsSet';
   providedIn: 'root'
 })
 export class QuizInformationDetailsService {
-  private _quizQuestionsSet: string = '/assets/datasource/questions-set-5.json';
-  private _quizFlipQuestionsSet: string = '/assets/datasource/flip-questions-set-5.json';
+  private _quizQuestionsSet: string = '/assets/datasource/questions-set-6.json';
+  private _quizFlipQuestionsSet: string = '/assets/datasource/flip-questions-set-6.json';
   constructor(private httpClient: HttpClient) { }
 
   getsQuestionsList(): Observable<any> {
