@@ -1,4 +1,4 @@
-# kbc-wwtbam
+# KBC-Who wants to be a Millionaire! (Indian Version)
 This is the repository for Kaun Banega Crorepati (Indian version of Who Wants to be a millionaire!) quiz show.
 
 There will be 15 question in total. A player will have to answer each question correctly to get to 7 crores (70 million) which is the ultimate prize (of course no one is going to pay you, so don't get ahead of yourselves 😎)
@@ -53,6 +53,10 @@ $ npm run start
  - Register
  - Winner celebration pages
  - Rules and regulations page
+ 
+### Screenshot
+
+![Screenshot](screenshots/game-screen.png?raw=true "Game-Show")
 
 License
 ----
