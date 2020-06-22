@@ -53,6 +53,10 @@ $ npm run start
  - Register
  - Winner celebration pages
  - Rules and regulations page
+ 
+### Screenshot
+
+![Screenshot](screenshots/game-screen.png?raw=true "Game-Show")
 
 License
 ----
