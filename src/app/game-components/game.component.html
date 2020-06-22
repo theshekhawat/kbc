@@ -1,0 +1,253 @@
+<!-- <audio #themeAudio autoplay id="theme_audio">
+    <source src="/../assets/sounds/main_theme.mp3" type="audio/mpeg">
+</audio> -->
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-secondary p-4" style="align-items: flex-end;">
+            <h5 class="text-white h4">User Details will come here</h5>
+            <span class="text-muted bg-light">Something</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-light">
+        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
+            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</div>
+<br />
+<div id="content" class="container-fluid">
+    <div class="jumbotron p-2 align-center h1 col-sm-12 card-style blue-background text-white">Namaskar {{username}}!
+        Let's play Kaun Banega Crorepati!
+    </div>
+    <div class="left-sidebar alert raised-block text-white card-style blue-background">
+        <div class="row form-group">
+            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineAskTheAudienceLocked" src={{_utilities.imageSourceAskTheAudience}} 
+            alt="one" (click)="getTheLifeline('audience-poll')">
+
+            <img class="col-sm-4 image-cursor"
+            [class.zoom]="!_utilities.lifelineFlipTheQuestionLocked" src={{_utilities.imageSourceFlipTheQuestion}} alt="two" 
+            (click)="getTheLifeline('switch-the-question')">
+
+            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineFiftyFiftyLocked" src={{_utilities.imageSourceFiftyFifty}}
+                alt="three" (click)="getTheLifeline('fifty-fifty')">
+        </div>
+        <div class="row form-group">
+            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineDoubleChanceLocked" src={{_utilities.imageSourceDoubleChance}}
+            alt="three" (click)="getTheLifeline('double-chance')">
+
+             <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineExtraTimeLocked" 
+            src={{this._utilities.imageSourceExtraTime}} alt="three" (click)="getTheLifeline('extra-time')"> 
+
+            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineAskTheExpertLocked" 
+            src={{this._utilities.imageSourceAskTheExpert}} alt="three" (click)="getTheLifeline('ask-the-expert')">
+        </div>
+        <div id="lifeline-extended" class="row form-group" [ngbCollapse]="isCollapsed">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <label class="switch text-center">
+                    <input #togglebtn type="button" id="togBtn" [disabled]=!hasOptionBeenLocked>
+                    <div class="slider round">
+                        <span class="on on-left">Apply</span>
+                        <span class="off off-left" 
+                        (click)="applyFlipTheQuestionLifeLine(!togglebtn.disabled)">Marked</span>
+                    </div>
+                </label>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <input type="text" #usernameText='ngModel' required [(ngModel)]="username"
+                    class="form-control blue-background text-style" id="name" aria-describedby="usernamelHelp"
+                    [class.is-invalid]='usernameText.invalid && usernameText.touched' placeholder="Enter your name"
+                    autocomplete="off">
+                <small class="text-danger"
+                    [class.d-none]="usernameText.valid || usernameText.untouched || isGameReset">Name is required you
+                    moron!</small>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <div class="card card-style blue-background">
+                    <button class="btn btn-default shadow-none" [disabled]="usernameText.invalid"
+                        (click)="startNewGame('name.value')">
+                        <h3>Start Game!</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <div class="card card-style dark-blue-background">
+                    <button class="btn btn-default align-center shadow-none" [disabled]="usernameText.invalid"
+                        (click)="quitTheGame()">
+                        <h3>Quit</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card card-style dark-blue-background">
+                    <button class="btn btn-default shadow-lg" [disabled]="usernameText.invalid"
+                        (click)="showNextQuestion()">
+                        <h3>Next</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12 p-2">
+                <h4 style="margin-left: 5%;">Current Winnings : &#8377; {{currentWinnings}}</h4>
+            </div>
+            <div class="col-sm-12 p-2">
+                <h4 style="margin-left: 5%;">Guaranteed Winnings : &#8377; {{guaranteedWinnings}}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 p-0"></div>
+                <app-timer (clockStatus)="clockStatusFromTimerComponent($event)"></app-timer>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div id="right-sidebar" class="card-style raised-block alert align-center blue-background">
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 15 && isNextQuestionAllowed) || (arrayIndex === 15 && !togglebtn.disabled)}">
+            15.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-xs"></i> 7 Crore
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 14 && isNextQuestionAllowed) || (arrayIndex === 14 && !togglebtn.disabled)}">
+            14.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-xs"></i> 5 Crore
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 13 && isNextQuestionAllowed) || (arrayIndex === 13 && !togglebtn.disabled)}">
+            13.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 3 Crore
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 12 && isNextQuestionAllowed) || (arrayIndex === 12 && !togglebtn.disabled)}">
+           <b class="text-info">12.</b><i class="fa fa-gem fa-sm text-info"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm text-info"></i><b class="text-info"> 1 Crore</b>
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 11 && isNextQuestionAllowed) || (arrayIndex === 11 && !togglebtn.disabled)}">
+            11.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 50 Lakh
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 10 && isNextQuestionAllowed) || (arrayIndex === 10 && !togglebtn.disabled)}">
+            10.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 25 Lakh
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 9 && isNextQuestionAllowed) || (arrayIndex === 9 && !togglebtn.disabled)}">
+           <b class="text-info">9.</b><i class="fa fa-gem fa-sm text-info"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm text-info"></i> <b class= "text-info"> 12,50,000</b>
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 8 && isNextQuestionAllowed) || (arrayIndex === 8 && !togglebtn.disabled)}">
+            8.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 6,40,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 7 && isNextQuestionAllowed) || (arrayIndex === 7 && !togglebtn.disabled)}">
+            7.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 3,20,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 6 && isNextQuestionAllowed) || (arrayIndex === 6 && !togglebtn.disabled) }">
+            6.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 1,60,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 5 && isNextQuestionAllowed) || (arrayIndex === 5 && !togglebtn.disabled)}">
+           <b class="text-info">5.</b><i class="fa fa-gem fa-sm text-info"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm text-info"></i> <b class="text-info"> 80,000</b>
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 4 && isNextQuestionAllowed) || (arrayIndex === 4 && !togglebtn.disabled) }">
+            4.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 40,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 3 && isNextQuestionAllowed) || (arrayIndex === 3 && !togglebtn.disabled)}">
+            3.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 20,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 2 && isNextQuestionAllowed) || (arrayIndex === 2 && !togglebtn.disabled)}">
+            2.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 10,000
+        </div>
+        <div class="money-color" 
+        [ngClass]="{'alert-light winning-highlight': (arrayIndex === 1 && isNextQuestionAllowed) || (arrayIndex === 1 && !togglebtn.disabled)}">
+            1.<i class="fa fa-gem fa-sm"></i>
+            &nbsp;<i class="fas fa-rupee-sign fa-sm"></i> 5,000
+        </div>
+    </div>
+    <main>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <div class="card card-style blue-background">
+                    <h3 #questionPlaceholder class="alert align-center">Question</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <div class="card-style blue-background"
+                    [ngClass]="{'yellow-background':(_utilities.isOptionOneLocked == true), 'green-background': _utilities.rightAnswerOptionOne == true }">
+                    <h3 #optionOnePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionOne === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(1, _utilities.isOptionOneEnabled)">Option 1
+                    </h3>
+                </div>
+                <div *ngIf="_utilities.audiencePollOptionOnePercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h3 class="text-white">{{_utilities.audiencePollOptionOnePercentage}}</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-style blue-background"
+                    [ngClass]="{'yellow-background':(_utilities.isOptionTwoLocked == true), 'green-background': _utilities.rightAnswerOptionTwo == true }">
+                    <h3 #optionTwoPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionTwo === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(2, _utilities.isOptionTwoEnabled)">Option 2
+                    </h3>
+                </div>
+                <div *ngIf="_utilities.audiencePollOptionTwoPercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h3 class="text-white">{{_utilities.audiencePollOptionTwoPercentage}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <div class="card-style blue-background"
+                    [ngClass]="{'yellow-background':(_utilities.isOptionThreeLocked == true), 'green-background': _utilities.rightAnswerOptionThree == true }">
+                    <h3 #optionThreePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionThree === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(3, _utilities.isOptionThreeEnabled)">Option 3
+                    </h3>
+                </div>
+                <div *ngIf="_utilities.audiencePollOptionThreePercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h3 class="text-white">{{_utilities.audiencePollOptionThreePercentage}}</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-style blue-background"
+                    [ngClass]="{'yellow-background':(_utilities.isOptionFourLocked == true), 'green-background': _utilities.rightAnswerOptionFour == true }">
+                    <h3 #optionFourPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionFour === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(4, _utilities.isOptionFourEnabled)">Option 4
+                    </h3>
+                </div>
+                <div *ngIf="_utilities.audiencePollOptionFourPercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h3 class="text-white">{{_utilities.audiencePollOptionFourPercentage}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group align-center">
+            <div class="col-sm-12">
+                <img class="col-sm-5" src="/../assets/images/kbc-logo.png" alt="kbc-logo">
+            </div>
+        </div>
+    </main>
+</div>
