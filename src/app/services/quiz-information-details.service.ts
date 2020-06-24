@@ -3,13 +3,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError as observableThrowError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators'
 import { IQuizQuestionsSet } from '../model/IQuizQuestionsSet';
+import { ConstantsService } from './constants.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizInformationDetailsService {
-  private _quizQuestionsSet: string = '/assets/datasource/questions-set-6.json';
-  private _quizFlipQuestionsSet: string = '/assets/datasource/flip-questions-set-6.json';
+  private _quizQuestionsSet: string = ConstantsService.questionsSetJsonFilePath;
+  private _quizFlipQuestionsSet: string = ConstantsService.flipQuestionsSetJsonFilePath;
   constructor(private httpClient: HttpClient) { }
 
   getsQuestionsList(): Observable<any> {

@@ -21,22 +21,23 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "./node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
-              "./node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
-              "./node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
-              "./node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
+              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
+              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
+              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/pusher-js/dist/web/pusher.min.js",
-              "./node_modules/chart.js/dist/chart.js"
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/pusher-js/dist/web/pusher.min.js",
+              "node_modules/chart.js/dist/chart.js"
             ]
           },
           "configurations": {
