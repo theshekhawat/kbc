@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GameComponent } from './game-components/game.component';
 import { AudiencePollComponent } from './game-components/audience-poll/audience-poll.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RulesComponent } from './rules/rules.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/game-show', pathMatch: 'full'},
   { path: 'game-show', component: GameComponent },
-  { path: 'audience-poll', component: AudiencePollComponent }
+  { path: 'audience-poll', component: AudiencePollComponent },
+  { path: 'operations', component: NavigationComponent },
+  { path: 'rules', component: RulesComponent },
+  { path: 'about', component: AboutMeComponent }
 ];
 
 @NgModule({

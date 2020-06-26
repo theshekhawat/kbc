@@ -1,0 +1,74 @@
+<div #sidebarNavigator id="sidebarNavigator" class="overlay align-middle" (click)="closeNav()">
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" style="top: 15%;" data-ride="carousel">  
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+  
+      <!--First slide-->
+      <div class="carousel-item active">
+  
+        <div class="col-md-3" style="float:left">
+         <div class="card mb-2">
+            <img class="card-img-top image-size"
+              src="./assets/images/there-are-rules.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title font-italic golden-font">Rules</h4>
+              <p class="card-text text-white">Take some time to understand the rules of the game. Trust me that'll help.</p>
+              <a routerLink="/rules" routerLinkActive="active" class="btn btn-outline-info rounded">Rules!  <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top image-size"
+              src="./assets/images/dumb-questions.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title font-italic golden-font">Upload Questions</h4>
+              <p class="card-text text-white">Want to ask your own set of questions ? Come here big fella!</p>
+              <a class="btn btn-outline-info">Questions!  <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top image-size"
+              src="./assets/images/it-is-always-about-me.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title font-italic golden-font">About</h4>
+              <p class="card-text text-white">The name is Bhawani Singh Shekhawat. That's enough said for now!</p>
+              <a class="btn btn-outline-info">About Me!  <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col-md-3" style="float:left">
+         <div class="card mb-2">
+            <img class="card-img-top image-size"
+              src="./assets/images/until-next-time-old-sport.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title font-italic golden-font">See you around!</h4>
+              <p class="card-text text-white">Now that the grand site tour is over, shall we play kaun banega crorepati ?</p>
+              <a routerLink="/game-show" routerLinkActive="active" class="btn btn-outline-info">Let's Play!  <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <!--/.First slide-->
+  
+     
+  
+    </div>
+    <!--/.Slides-->
+  
+  </div>
+  <!--/.Carousel Wrapper-->
+</div>
+
+<nav class="navbar navbar-light">
+    <button class="navbar-toggler bg-light" type="button" (click)="openNav()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>

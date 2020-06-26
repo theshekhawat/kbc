@@ -10,6 +10,9 @@ import { AudiencePollComponent } from './game-components/audience-poll/audience-
 import { ChartsModule } from "ng2-Charts";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimerComponent } from './game-components/timer/timer.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RulesComponent } from './rules/rules.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { TimerComponent } from './game-components/timer/timer.component';
     routingComponents,
     AudiencePollComponent,
     TimerComponent,
+    NavigationComponent,
+    RulesComponent,
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule,
