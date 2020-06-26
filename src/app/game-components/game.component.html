@@ -1,6 +1,6 @@
 <app-navigation></app-navigation>
 <div id="content" class="container-fluid">
-    <div class="jumbotron p-2 align-center h1 col-sm-12 card-style blue-background text-white">Namaskar {{username}}!
+    <div class="jumbotron p-2 align-center h3 col-sm-12 card-style blue-background text-white">Namaskar {{username}}!
         Let's play Kaun Banega Crorepati!
     </div>
     <div class="left-sidebar alert raised-block text-white card-style blue-background">
@@ -56,7 +56,7 @@
                 <div class="card card-style blue-background">
                     <button class="btn btn-default shadow-none" [disabled]="usernameText.invalid"
                         (click)="startNewGame('name.value')">
-                        <h3>Start Game!</h3>
+                        <h4>Start Game!</h4>
                     </button>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <div class="card card-style dark-blue-background">
                     <button class="btn btn-default align-center shadow-none" [disabled]="usernameText.invalid"
                         (click)="quitTheGame()">
-                        <h3>Quit</h3>
+                        <h4>Quit</h4>
                     </button>
                 </div>
             </div>
@@ -74,21 +74,21 @@
                 <div class="card card-style dark-blue-background">
                     <button class="btn btn-default shadow-lg" [disabled]="usernameText.invalid"
                         (click)="showNextQuestion()">
-                        <h3>Next</h3>
+                        <h4>Next</h4>
                     </button>
                 </div>
             </div>
         </div>
         <div class="row form-group">
-            <div class="col-sm-12 p-2">
-                <h4 style="margin-left: 5%;">Current Winnings : &#8377; {{currentWinnings}}</h4>
+            <div class="col-sm-12 p-0">
+                <h4 style="margin-left: 5%;font-size: larger;">Current Winnings : &#8377; {{currentWinnings}}</h4>
             </div>
-            <div class="col-sm-12 p-2">
-                <h4 style="margin-left: 5%;">Guaranteed Winnings : &#8377; {{guaranteedWinnings}}</h4>
+            <div class="col-sm-12 p-0">
+                <h4 style="margin-left: 5%; font-size: larger;">Guaranteed Winnings : &#8377; {{guaranteedWinnings}}</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3 p-0"></div>
+            <div class="col-sm-3"></div>
                 <app-timer (clockStatus)="clockStatusFromTimerComponent($event)"></app-timer>
             <div class="col-sm-3"></div>
         </div>
@@ -173,8 +173,8 @@
     <main>
         <div class="row form-group">
             <div class="col-sm-12">
-                <div class="card card-style blue-background">
-                    <h3 #questionPlaceholder class="alert align-center">Question</h3>
+                <div class="card-style blue-background">
+                    <h4 #questionPlaceholder class="alert align-center">Question</h4>
                 </div>
             </div>
         </div>
@@ -182,23 +182,23 @@
             <div class="col-sm-6">
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(_utilities.isOptionOneLocked == true), 'green-background': _utilities.rightAnswerOptionOne == true }">
-                    <h3 #optionOnePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionOne === true"
+                    <h4 #optionOnePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionOne === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(1, _utilities.isOptionOneEnabled)">Option 1
-                    </h3>
+                    </h4>
                 </div>
                 <div *ngIf="_utilities.audiencePollOptionOnePercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h3 class="text-white">{{_utilities.audiencePollOptionOnePercentage}}</h3>
+                    <h4 class="text-white">{{_utilities.audiencePollOptionOnePercentage}}</h4>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(_utilities.isOptionTwoLocked == true), 'green-background': _utilities.rightAnswerOptionTwo == true }">
-                    <h3 #optionTwoPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionTwo === true"
+                    <h4 #optionTwoPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionTwo === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(2, _utilities.isOptionTwoEnabled)">Option 2
-                    </h3>
+                    </h4>
                 </div>
                 <div *ngIf="_utilities.audiencePollOptionTwoPercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h3 class="text-white">{{_utilities.audiencePollOptionTwoPercentage}}</h3>
+                    <h4 class="text-white">{{_utilities.audiencePollOptionTwoPercentage}}</h4>
                 </div>
             </div>
         </div>
@@ -206,23 +206,23 @@
             <div class="col-sm-6">
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(_utilities.isOptionThreeLocked == true), 'green-background': _utilities.rightAnswerOptionThree == true }">
-                    <h3 #optionThreePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionThree === true"
+                    <h4 #optionThreePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionThree === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(3, _utilities.isOptionThreeEnabled)">Option 3
-                    </h3>
+                    </h4>
                 </div>
                 <div *ngIf="_utilities.audiencePollOptionThreePercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h3 class="text-white">{{_utilities.audiencePollOptionThreePercentage}}</h3>
+                    <h4 class="text-white">{{_utilities.audiencePollOptionThreePercentage}}</h4>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(_utilities.isOptionFourLocked == true), 'green-background': _utilities.rightAnswerOptionFour == true }">
-                    <h3 #optionFourPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionFour === true"
+                    <h4 #optionFourPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionFour === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(4, _utilities.isOptionFourEnabled)">Option 4
-                    </h3>
+                    </h4>
                 </div>
                 <div *ngIf="_utilities.audiencePollOptionFourPercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h3 class="text-white">{{_utilities.audiencePollOptionFourPercentage}}</h3>
+                    <h4 class="text-white">{{_utilities.audiencePollOptionFourPercentage}}</h4>
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@ a {
 	padding: 8px;
 	text-decoration: none;
 	font-size: 36px;
-	color: gold;
+	color: black;
 	display: block;
 	/* Display block instead of inline */
 	transition: 0.3s;
@@ -74,7 +74,7 @@ a {
 
 @media screen and (max-height: 450px) {
 	.overlay a {
-		font-size: 20px
+		font-size: larger
 	}
 	.overlay .closebtn {
 		font-size: 40px;
@@ -84,7 +84,7 @@ a {
 }
 
 .image-size {
-	height: 350px;
+	height: 250px;
 }
 
 .card {

@@ -2,13 +2,11 @@
 	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
-	font-weight: 100;
 	text-align: center;
-	font-size: 30px;
+	font-size: large;
 }
 
 #clockdiv > div{
-	padding: 10px;
     display: inline-block;
     border-radius: 20px;
     background: darkblue;
@@ -18,13 +16,12 @@
 	padding: 15px;
 	border-radius: 3px;
     display: inline-block;
-    border-radius: 50px;
 }
 
 .golden-border {
-	border: 5px solid goldenrod;
+	border: 2px solid goldenrod;
 }
 
 .red-border {
-	border: 5px solid crimson;
+	border: 2px solid crimson;
 }

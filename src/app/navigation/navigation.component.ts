@@ -20,5 +20,4 @@ export class NavigationComponent implements OnInit {
   closeNav() {
     this.sidebar.nativeElement.style.width = "0%";
   }
-
 }

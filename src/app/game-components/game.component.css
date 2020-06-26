@@ -34,7 +34,7 @@ div#right-sidebar{
 
   .money-color {
       color: goldenrod;
-      font-size: x-large;
+      font-size: larger;
   }
 
   .blue-background {
@@ -72,7 +72,7 @@ div#right-sidebar{
   }
 
   .card-style {
-    border: 5px solid; 
+    border: 2px solid; 
     border-color: goldenrod; 
     border-radius: 50px;
   }
