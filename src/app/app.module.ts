@@ -13,6 +13,7 @@ import { TimerComponent } from './game-components/timer/timer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RulesComponent } from './rules/rules.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { StartupComponent } from './startup/startup.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     NavigationComponent,
     RulesComponent,
     AboutMeComponent,
+    StartupComponent,
   ],
   imports: [
     BrowserModule,

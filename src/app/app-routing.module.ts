@@ -5,15 +5,18 @@ import { AudiencePollComponent } from './game-components/audience-poll/audience-
 import { NavigationComponent } from './navigation/navigation.component';
 import { RulesComponent } from './rules/rules.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { StartupComponent } from './startup/startup.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/game-show', pathMatch: 'full'},
+  { path: '', redirectTo: '/startup', pathMatch: 'full'},
   { path: 'game-show', component: GameComponent },
   { path: 'audience-poll', component: AudiencePollComponent },
   { path: 'operations', component: NavigationComponent },
   { path: 'rules', component: RulesComponent },
-  { path: 'about', component: AboutMeComponent }
+  { path: 'about', component: AboutMeComponent },
+  { path: 'startup', component: StartupComponent },
+  {path: '**', redirectTo: '/startup'}
 ];
 
 @NgModule({
