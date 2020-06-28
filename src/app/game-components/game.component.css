@@ -28,8 +28,12 @@ div#right-sidebar{
     margin: 0 auto;
   }
   
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, .text-color-style {
     color: goldenrod;
+  }
+
+  small {
+    font-size: medium;
   }
 
   .money-color {
@@ -109,6 +113,10 @@ div#right-sidebar{
 
   .align-center {
     text-align: center;
+  }
+
+  .wrap-word {
+    word-wrap: break-word;
   }
 
   .raised-block {

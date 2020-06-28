@@ -18,6 +18,7 @@ export class ConstantsService {
   public static readonly askTheExpertImageSourcePath:string           = './assets/images/ask-the-expert.png';
   public static readonly askTheExpertDoneImageSourcePath:string       = './assets/images/ask-the-expert-done.png';
   public static readonly startNewGameAudioFilePath: string            = './assets/sounds/lets_play.mp3';
+  public static readonly mainThemeAudioFilePath: string               = './assets/sounds/main_theme.mp3';
   public static readonly correctAnswerAudioFilePath: string           = './assets/sounds/correct_answer.mp3';
   public static readonly wrongAnswerAudioFilePath: string             = './assets/sounds/wrong_answer.mp3';
   public static readonly finalAnswerAudioFilePath: string             = './assets/sounds/final_answer.mp3';
@@ -51,4 +52,8 @@ export class ConstantsService {
   public static readonly firstMilestoneAmount: string                 = '80,000';
   public static readonly secondMilestoneAmount: string                = '12,50,000';
   public static readonly thirdMilestoneAmount: string                 = '1,00,00,000';
+  public static startGameHeading: string                              = 'Start Game!';
+  public static nextQuestionHeading: string                           = 'Next';
+  public static quiteGameHeading: string                              = 'Quit';
+  public static informationAboutQuestion:string                       = 'This is the place where knowledge with fun begins! Brace yourselves!';
 }

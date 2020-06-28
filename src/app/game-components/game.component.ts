@@ -22,6 +22,7 @@ export class GameComponent implements OnInit {
   @ViewChild('optionTwoPlaceHolder', { static: true }) optionTwoElement:      ElementRef;
   @ViewChild('optionThreePlaceHolder', { static: true }) optionThreeElement:  ElementRef;
   @ViewChild('optionFourPlaceHolder', { static: true }) optionFourElement:    ElementRef;
+  @ViewChild('information', { static: true }) informationElement:             ElementRef;
   //#endregion
 
   //#region public-properties
@@ -56,8 +57,14 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.checkIsBrowserMobile();
     this.getQuizQuestions();
     this.prepareWinningsDetails();
+  }
+  checkIsBrowserMobile() {
+    if (this._utilities.isMobile()) {
+      this._utilities.startGameHeading = this._utilities.quitGameHeading = this._utilities.nextQuestionHeading = '';
+    }
   }
 
   getTheLifeline(lifeline: string) {
@@ -122,7 +129,7 @@ export class GameComponent implements OnInit {
       lockedAnswer = this.getsLockedOption(optionNumber);
       this._utilities.setOptions(false);
       this.isNextQuestionAllowed = false;
-      setTimeout(this.optionLocked , 5000, lockedAnswer);
+      setTimeout(this.optionLocked , 4000, lockedAnswer);
     }
   }
 
@@ -169,6 +176,7 @@ export class GameComponent implements OnInit {
         this.getsWrongOption(lockedAnswer);
         this._audioManager.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
       }
+      this.informationElement.nativeElement.innerHTML     = this.questions['Questions'][this.arrayIndex - 1].information;
       this.stopTheTimer();
   }
 
@@ -408,6 +416,7 @@ export class GameComponent implements OnInit {
     this.optionTwoElement.nativeElement.innerHTML   = ConstantsService.optionTwoTextPlaceHolder;
     this.optionThreeElement.nativeElement.innerHTML = ConstantsService.optionThreeTextPlaceHolder;
     this.optionFourElement.nativeElement.innerHTML  = ConstantsService.optionFourTextPlaceHolder;
+    this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this.arrayIndex                                 = 0;
     this._utilities.hasGameStarted                  = false;
     this.username                                   = ConstantsService.emptyString;
@@ -422,11 +431,12 @@ export class GameComponent implements OnInit {
   }
 
   private presentQuestion() {
-    this.questionElement.nativeElement.innerHTML    = this.questions['Questions'][this.arrayIndex].question;
-    this.optionOneElement.nativeElement.innerHTML   = this.questions['Questions'][this.arrayIndex].optionOne;
-    this.optionTwoElement.nativeElement.innerHTML   = this.questions['Questions'][this.arrayIndex].optionTwo;
-    this.optionThreeElement.nativeElement.innerHTML = this.questions['Questions'][this.arrayIndex].optionThree;
-    this.optionFourElement.nativeElement.innerHTML  = this.questions['Questions'][this.arrayIndex].optionFour;
+    this.questionElement.nativeElement.innerHTML        = this.questions['Questions'][this.arrayIndex].question;
+    this.optionOneElement.nativeElement.innerHTML       = this.questions['Questions'][this.arrayIndex].optionOne;
+    this.optionTwoElement.nativeElement.innerHTML       = this.questions['Questions'][this.arrayIndex].optionTwo;
+    this.optionThreeElement.nativeElement.innerHTML     = this.questions['Questions'][this.arrayIndex].optionThree;
+    this.optionFourElement.nativeElement.innerHTML      = this.questions['Questions'][this.arrayIndex].optionFour;
+    this.informationElement.nativeElement.innerHTML     = ConstantsService.informationAboutQuestion;
     this.isNextQuestionAllowed = true;
     this.hasOptionBeenLocked = false;
     this.arrayIndex++;
@@ -441,6 +451,7 @@ export class GameComponent implements OnInit {
     this.optionTwoElement.nativeElement.innerHTML   = this.flippedQuestionDetails.optionTwo;
     this.optionThreeElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionThree;
     this.optionFourElement.nativeElement.innerHTML  = this.flippedQuestionDetails.optionFour;
+    this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this._data.changeMessage(this.flippedQuestionDetails.audiencePoll);
     this._utilities.isFlippedQuestionPresented = true;
     this.startTheTimer();

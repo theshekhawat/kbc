@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AudioManagerService } from '../services/audio-manager.service';
+import { ConstantsService } from '../services/constants.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,9 +10,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   @ViewChild("sidebarNavigator") sidebar: ElementRef;
-  constructor() { }
+  constructor(private _audioManager: AudioManagerService) { }
 
   ngOnInit(): void {
+    this._audioManager.stopIfAudioIsPlaying();
+    this._audioManager.playBackgroundSound(ConstantsService.mainThemeAudioFilePath);
   }
 
   openNav() {

@@ -40,6 +40,10 @@ export class GameShowUtilitiesService {
   public lifelineAskTheExpertLocked:boolean = false;
   public isFlippedQuestionPresented:boolean = false;
   public doubleChanceCounter:number = 0;
+  public startGameHeading:string = ConstantsService.startGameHeading;
+  public nextQuestionHeading:string = ConstantsService.nextQuestionHeading;
+  public quitGameHeading:string = ConstantsService.quiteGameHeading;
+  public questionInformation:string = ConstantsService.informationAboutQuestion;
 
   constructor() {
     this.hasGameStarted = false;
@@ -77,8 +81,10 @@ export class GameShowUtilitiesService {
     this.audiencePollOptionTwoPercentage    = ConstantsService.emptyString;
     this.audiencePollOptionThreePercentage  = ConstantsService.emptyString;
     this.audiencePollOptionFourPercentage   = ConstantsService.emptyString;
+    this.questionInformation                = ConstantsService.informationAboutQuestion;
     this.doubleChanceCounter    = 0;
     this.setWrongAnswer(false);
+
   }
 
   public setOptions(isOptionEnabled: boolean) {
@@ -125,4 +131,13 @@ export class GameShowUtilitiesService {
     stringToBeConverted = stringToBeConverted.replace(',', '.');
     return parseFloat(stringToBeConverted);
   }
+
+  isMobile() {
+    var match = window.matchMedia;
+    if(match) {
+        var mq = match("(pointer:coarse)");
+        return mq.matches;
+    }
+    return false;
+}
 }
