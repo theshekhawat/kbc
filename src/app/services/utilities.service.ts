@@ -24,6 +24,10 @@ export class GameShowUtilitiesService {
   public rightAnswerOptionTwo:boolean;
   public rightAnswerOptionThree:boolean;
   public rightAnswerOptionFour:boolean;
+  public wrongAnswerOptionOne:boolean;
+  public wrongAnswerOptionTwo:boolean;
+  public wrongAnswerOptionThree:boolean;
+  public wrongAnswerOptionFour:boolean;
   public audiencePollOptionOnePercentage:string;
   public audiencePollOptionTwoPercentage:string;
   public audiencePollOptionThreePercentage:string;
@@ -65,11 +69,16 @@ export class GameShowUtilitiesService {
     this.rightAnswerOptionTwo   = false;
     this.rightAnswerOptionThree = false;
     this.rightAnswerOptionFour  = false;
+    this.wrongAnswerOptionOne   = false;
+    this.wrongAnswerOptionTwo   = false;
+    this.wrongAnswerOptionThree = false;
+    this.wrongAnswerOptionFour  = false;
     this.audiencePollOptionOnePercentage    = ConstantsService.emptyString;
     this.audiencePollOptionTwoPercentage    = ConstantsService.emptyString;
     this.audiencePollOptionThreePercentage  = ConstantsService.emptyString;
     this.audiencePollOptionFourPercentage   = ConstantsService.emptyString;
     this.doubleChanceCounter    = 0;
+    this.setWrongAnswer(false);
   }
 
   public setOptions(isOptionEnabled: boolean) {
@@ -78,6 +87,10 @@ export class GameShowUtilitiesService {
 
   public setRightAnswer(isRightAnswerEnabled: boolean) {
     this.rightAnswerOptionOne = this.rightAnswerOptionTwo = this.rightAnswerOptionThree = this.rightAnswerOptionFour  = isRightAnswerEnabled;
+  }
+
+  public setWrongAnswer(isWrongAnswerEnabled: boolean) {
+    this.wrongAnswerOptionOne = this.wrongAnswerOptionTwo = this.wrongAnswerOptionThree = this.wrongAnswerOptionFour  = isWrongAnswerEnabled;
   }
 
   public setLifeLines(isLifeLineEnabled: boolean) {

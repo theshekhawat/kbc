@@ -166,6 +166,7 @@ export class GameComponent implements OnInit {
           this._utilities.isFlippedQuestionPresented = false;
         }
         this.isNextQuestionAllowed = false;
+        this.getsWrongOption(lockedAnswer);
         this._audioManager.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
       }
       this.stopTheTimer();
@@ -237,6 +238,23 @@ export class GameComponent implements OnInit {
         break;
     }
     return lockedAnswer;
+  }
+
+  private getsWrongOption(optionNumber: number) {
+    switch (optionNumber) {
+      case 1:
+        this._utilities.wrongAnswerOptionOne    = true;
+        break;
+      case 2:
+        this._utilities.wrongAnswerOptionTwo    = true;
+        break;
+      case 3:
+        this._utilities.wrongAnswerOptionThree  = true;
+        break;
+      case 4:
+        this._utilities.wrongAnswerOptionFour   = true;
+        break;
+    }
   }
 
   private getQuizQuestions() {
