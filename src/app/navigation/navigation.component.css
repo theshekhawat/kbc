@@ -10,9 +10,9 @@
 	/* Sit on top */
 	left: 0;
 	top: 0;
-	background-color: darkblue;
+	/* background-color: darkblue; */
 	/* Black fallback color */
-	background-color: rgba(0, 0, 139, 0.9);
+	background-color: rgba(42, 19, 80, 0.9);
 	/* Black w/opacity */
 	overflow-x: hidden;
 	/* Disable horizontal scroll */

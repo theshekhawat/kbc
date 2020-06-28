@@ -8,8 +8,9 @@
 
 #clockdiv > div{
     display: inline-block;
-    border-radius: 20px;
-    background: darkblue;
+	border-radius: 20px;
+	background: #2A133D;
+    /* background: darkblue; */
 }
 
 #clockdiv div > span{

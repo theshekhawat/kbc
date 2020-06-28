@@ -38,7 +38,8 @@ div#right-sidebar{
   }
 
   .blue-background {
-    background-color: midnightblue; ;
+    background-color: #2A133D;
+    /* background-color: midnightblue; */
   }
 
   .gray-background {
@@ -58,7 +59,8 @@ div#right-sidebar{
   }
 
   .dark-blue-background {
-    background-color: darkblue; ;
+    background-color: #2A133D;
+    /* background-color: darkblue; */
   }
 
   .image-cursor {

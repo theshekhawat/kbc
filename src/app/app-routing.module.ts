@@ -6,6 +6,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RulesComponent } from './rules/rules.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { StartupComponent } from './startup/startup.component';
+import { UploadQuestionsComponent } from './upload-questions/upload-questions.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'about', component: AboutMeComponent },
   { path: 'startup', component: StartupComponent },
-  {path: '**', redirectTo: '/startup'}
+  { path: 'upload-questions', component: UploadQuestionsComponent },
+  { path: 'page-not-found', component: PageNotFoundComponent },
+  {path: '**', redirectTo: '/page-not-found'}
 ];
 
 @NgModule({

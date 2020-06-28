@@ -14,6 +14,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RulesComponent } from './rules/rules.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { StartupComponent } from './startup/startup.component';
+import { UploadQuestionsComponent } from './upload-questions/upload-questions.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { StartupComponent } from './startup/startup.component';
     RulesComponent,
     AboutMeComponent,
     StartupComponent,
+    UploadQuestionsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
