@@ -5,5 +5,6 @@ export interface IQuizQuestionsSet {
     optionThree:    string,
     optionFour:     string,
     rightAnswer:    string,
-    audiencePoll:   string
+    audiencePoll:   string,
+    information:    string
 }
