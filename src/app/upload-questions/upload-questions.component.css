@@ -1,14 +1,45 @@
- 
-  .middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.icon-color {
+  color: darkgoldenrod;
+}
+
+input, textarea, select {
+  border-left: 5px solid skyblue;
+  box-shadow:none;
+}
+
+#outmostDiv {
+  border: 2px solid darkgoldenrod; 
+  border-radius: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+h2 {
+  color: goldenrod;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* .ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green 
+} */
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+  border-left: 5px solid #a94442;
   
-  hr {
-    margin: auto;
-    width: 40%;
-    color: teal;
-  }
+}
+
+input.ng-valid, textarea.ng-valid {
+  border-left: 5px solid #42A948;
+}
+
+
+/* .ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red 
+} */

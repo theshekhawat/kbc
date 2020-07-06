@@ -1,8 +1,88 @@
 <app-navigation></app-navigation>
-<div class="text-white">
-    <div class="middle">
-      <h1>COMING SOON</h1>
-      <hr>
-      <p>Patience is the mother of frustration!</p>
+<form #questionForm="ngForm">
+<div id="outmostDiv" class="text-white px-5 my-5">
+  <div class="align-center"><h2>Questions</h2></div>
+  <div class="row form-group mt-3 mb-1">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="icon-color fas fa-question-circle fa-lg"></i></span>
+        </div>
+        <textarea class="form-control" id="question" required [(ngModel)]="questionSet.question"
+          placeholder="Enter your question here!" name="question" aria-label="Question"
+          aria-describedby="basic-addon1"></textarea>
+      </div>
+  </div>
+  <div class="row form-group mt-0 mb-0">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="option-1"><i class="icon-color fas fa-dice-one fa-lg"></i></span>
+        </div>
+        <input type="text" class="form-control" required id="optionOne" [(ngModel)]="questionSet.optionOne"
+          placeholder="Enter First Option here!" name="optionOne" aria-label="Option 1" aria-describedby="option-1">
+      </div>
+  </div>
+  <div class="row form-group my-1">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="option-2"><i class="icon-color fas fa-dice-two fa-lg"></i></span>
+        </div>
+        <input type="text" class="form-control" required id="optionTwo" [(ngModel)]="questionSet.optionTwo"
+          placeholder="Enter Second Option here!" name="optionTwo" aria-label="Option 2" aria-describedby="option-2">
+      </div>
+  </div>
+  <div class="row form-group my-1">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="option-3"><i class="icon-color fas fa-dice-three fa-lg"></i></span>
+        </div>
+        <input type="text" class="form-control" required id="optionThree" [(ngModel)]="questionSet.optionThree"
+          placeholder="Enter Third Option here!" name="optionThree" aria-label="Option 3" aria-describedby="option-3">
+      </div>
+  </div>
+  <div class="row form-group my-1">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="option-4"><i class="icon-color fas fa-dice-four fa-lg"></i></span>
+        </div>
+        <input type="text" class="form-control" required id="optionFour" [(ngModel)]="questionSet.optionFour"
+          placeholder="Enter Fourth Option here!" name="optionFour" aria-label="Option 4" aria-describedby="option-4">
     </div>
+  </div>
+  <div class="row form-group my-1">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="rightAnswer"><i class="icon-color fas fa-filter fa-lg"></i></label>
+        </div>
+        <select class="form-control custom-select" id="rightAnswer" required [(ngModel)]="questionSet.rightAnswer" name="rightAnswer">
+          <option *ngFor="let rightAnswer of optionsArray" [value]="rightAnswer">{{rightAnswer}}</option>
+        </select>
+      </div>
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-12 input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="info"><i class="icon-color fa fa-info-circle fa-lg" aria-hidden="true"></i></span>
+        </div>
+        <textarea type="text" class="form-control" required id="information" [(ngModel)]="questionSet.information"
+        placeholder="Enter Additional Information about the right answer here!" name="information" aria-label="information" 
+        aria-describedby="info"></textarea>
+      </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-outline-warning"><i class="far fa-caret-square-left fa-2x"></i></button>
+    </div>
+    <div class="col-sm-8 align-center">
+      <button type="button" class="btn btn-outline-warning"><i class="fab fa-telegram-plane fa-2x"></i></button>
+    </div>
+    <div class="col-sm-2 align-right">
+      <button type="button" class="btn btn-outline-warning">
+        <i class="far fa-caret-square-right fa-2x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-12 text-danger align-center"></div>
+  </div>
 </div>
+</form>
