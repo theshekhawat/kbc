@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FastestFingerFirstComponent } from './fastest-finger-first.component';
 
@@ -6,7 +6,7 @@ describe('FastestFingerFirstComponent', () => {
   let component: FastestFingerFirstComponent;
   let fixture: ComponentFixture<FastestFingerFirstComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FastestFingerFirstComponent ]
     })
