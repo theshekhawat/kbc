@@ -1,0 +1,170 @@
+{
+    "Questions": [
+        {
+          "question":       "National Song of India is ?",
+          "optionOne":      "Vande Mataram",
+          "optionTwo":      "Saare Jahaan se Accha",
+          "optionThree":    "Maa Tujhe Salaam",
+          "optionFour":     "Jana-Gana-Mana",
+          "rightAnswer":    "optionOne",
+          "audiencePoll":   "80, 10, 5, 5, 0",
+          "amount":         "5,000",
+          "information":    "Vande Mataram is the national song of India. The song was written by Bankim Chandra Chatterjee."
+        },
+        {
+            "question":    "National Reptile of India is ?",
+            "optionOne":   "Anaconda",
+            "optionTwo":   "Viper",
+            "optionThree": "King Cobra",
+            "optionFour":  "Python",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"20, 5, 65, 15, 0",
+            "amount":      "10,000",
+            "information": "The peacock was designated as the national bird, the tiger as the national animal, the gangetic dolphin as the national aquatic animal, the king cobra as the national reptile and the elephant as the national heritage animal."
+        },
+        {
+            "question":    "_______ in India is known as Orange City",
+            "optionOne":   "Nagpur",
+            "optionTwo":   "Nagaur",
+            "optionThree": "Lucknow",
+            "optionFour":  "Bhubaneshwar",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"65, 5, 15, 5, 0",
+            "amount":      "20,000",
+            "information": "Nagpur is known as Orange City for being a major trade center of oranges cultivated in large part of the region."
+        },
+        {
+            "question":    "Exposure to sunlight helps a person improve his health because ?",
+            "optionOne":   "The infrared light kills bacteria in the body.",
+            "optionTwo":   "The ultraviolet rays convert skin oil into Vitamin D.",
+            "optionThree": "The pigment cells in the skin get stimulated and produce a healthy tan",
+            "optionFour":  "Resistance power increases",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 90, 3, 2, 0",
+            "amount":      "40,000",
+            "information": "Vitamin D is sometimes called the “sunshine vitamin” because it's produced in your skin in response to sunlight. It's a fat-soluble vitamin in a family of compounds that includes vitamins D-1, D-2, and D-3."
+        },
+        {
+            "question":    "Golf player Vijay Singh belongs to which country ?",
+            "optionOne":   "USA",
+            "optionTwo":   "Fiji",
+            "optionThree": "India",
+            "optionFour":  "UK",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 65, 15, 18, 0",
+            "amount":      "80,000",
+            "information": "Vijay Singh CF, nicknamed \"The Big Fijian\", is a Fijian professional golfer. He has won 34 events on the PGA Tour, including three major championships."
+        },
+        {
+            "question":    "The ozone layer restricts ?",
+            "optionOne":   "Visible Light",
+            "optionTwo":   "Infrared Radiation",
+            "optionThree": "X-rays and gamma rays",
+            "optionFour":  "Ultraviolet Radiation",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"8, 5, 25, 62, 0",
+            "amount":      "1,60,000",
+            "information": "The ozone layer restricts ultraviolet radiation. The Ozone layer which is present in the Earth's atmosphere protects it by restricting from UV or Ultraviolet radiation, the dangerous rays contained by Sun."
+        },
+        {
+            "question":    "In which country Mother Teresa was born ?",
+            "optionOne":   "Macedonia",
+            "optionTwo":   "Germany",
+            "optionThree": "Hungary",
+            "optionFour":  "Slovakia",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"78, 12, 5, 5, 0",
+            "amount":      "3,20,000",
+            "information": "Mother Mary Teresa Bojaxhiu 26 August 1910 – 5 September 1997, honoured in the Catholic Church as Saint Teresa of Calcutta, was an Albanian-Indian Roman Catholic nun and missionary."
+        },
+        {
+            "question":    "Who is known as the 'Metro man' in India ?",
+            "optionOne":   "C Rangarajan",
+            "optionTwo":   "E Sreedharan",
+            "optionThree": "Montek Singh Ahluwalia",
+            "optionFour":  "Ratan Tata",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"8, 42, 15, 15, 20",
+            "amount":      "6,40,000",
+            "information": "Elattuvalapil Sreedharan is an Indian civil engineer and a retired IRSE officer popularly known as the \"Metro Man\"."
+        },
+        {
+            "question":    "What was the code name of the first nuclear tests conducted by India in on 18 May 1974, in Pokhran, Rajasthan ?",
+            "optionOne":   "Smiling Buddha",
+            "optionTwo":   "Operation Ashwamedh",
+            "optionThree": "Smiling Buddha",
+            "optionFour":  "Operation Vijay",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"80, 8, 8, 2, 2",
+            "amount":      "12,50,000",
+            "information": "Smiling Buddha (MEA designation: Pokhran-I) was the assigned code name of India's first successful nuclear bomb test on 18 May 1974. The bomb was detonated on the army base Pokhran Test Range (PTR), in Rajasthan, by the Indian Army under the supervision of several key Indian generals."
+        },
+        {
+            "question":    "The value of \"pi\" was first calulated by the indian mathematician ?",
+            "optionOne":   "Varahamihira",
+            "optionTwo":   "Budhayana",
+            "optionThree": "Aryabhata",
+            "optionFour":  "Panini",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"2, 6, 88, 1, 3",
+            "amount":      "25 Lakh",
+            "information": "Indian mathematicians Madhava and Aryabhata made very significant contributions in finding the exact value of π (pi)."
+        },
+        {
+            "question":    "Which one is the longest river in South India ?",
+            "optionOne":   "Kaveri",
+            "optionTwo":   "Krishna",
+            "optionThree": "Godavari",
+            "optionFour":  "Brahmaputra",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"12, 5, 78, 5, 0",
+            "amount":      "50 Lakh",
+            "information": "In the list of longest rivers in India, Godavari is the longest river in South India for which it is also called the South Ganges and the Dakshin Ganges."
+        },
+        {
+            "question":    "'Kuchipudi' is a classical dance from the state ?",
+            "optionOne":   "Tamil Nadu",
+            "optionTwo":   "Andhra Pradesh",
+            "optionThree": "Odisha",
+            "optionFour":  "Kerala",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 15, 58, 15, 0",
+            "amount":      "1 Crore",
+            "information": "Kuchipudi is considered one of the toughest forms of Indian classical dance that originated in the south Indian state of Andhra Pradesh."
+        },
+        {
+            "question":    "Indian Military Academy is located in which city ?",
+            "optionOne":   "Shimla",
+            "optionTwo":   "Lucknow",
+            "optionThree": "Mussoorie",
+            "optionFour":  "Dehradun",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"5, 60, 18, 15, 5",
+            "amount":      "3 Crore",
+            "information": "The Indian Military Academy (IMA) is an officer-training academy of the Indian Army in Dehradun, Uttarakhand."
+        },
+        {
+            "question":    "Which one is the religious tallest minar in India ?",
+            "optionOne":   "Fateh Burj",
+            "optionTwo":   "Qutub Minar",
+            "optionThree": "Chand Minar",
+            "optionFour":  "Shaheed Minar",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"50, 15, 10, 15, 10",
+            "amount":      "5 Crore",
+            "information": "The Fateh Burj (English: The Victory Tower) is the tallest religious minar in India situated in the historical village of Chappar Chiri in the SAS Nagar district, Punjab. It was completed in 2011."
+        },
+        {
+            "question":    "With how many countries India share its land borders ?",
+            "optionOne":   "5",
+            "optionTwo":   "6",
+            "optionThree": "7",
+            "optionFour":  "8",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 90, 3, 2, 0",
+            "amount":      "7 Crore",
+            "information": "Inventor Ralph Baer, The 'Father Of Video Games,' Dies At 92. German-American game developer Ralph Baer shows the prototype of the first games console which was invented by him during a press conference on the Games Convention Online in Leipzig, Germany in 2009."
+
+        }
+      ]
+    }

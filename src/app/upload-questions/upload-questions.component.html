@@ -54,7 +54,8 @@
           <label class="input-group-text" for="rightAnswer"><i class="icon-color fas fa-filter fa-lg"></i></label>
         </div>
         <select class="form-control custom-select" id="rightAnswer" required [(ngModel)]="questionSet.rightAnswer" name="rightAnswer">
-          <option *ngFor="let rightAnswer of optionsArray" [value]="rightAnswer">{{rightAnswer}}</option>
+          <option value="" disabled selected>Select right answer</option>
+          <option placeholder='Select right answer' *ngFor="let rightAnswer of optionsArray" [value]="rightAnswer">{{rightAnswer}}</option>
         </select>
       </div>
   </div>
@@ -70,13 +71,13 @@
   </div>
   <div class="row form-group">
     <div class="col-sm-2">
-      <button type="button" class="btn btn-outline-warning"><i class="far fa-caret-square-left fa-2x"></i></button>
+      <button type="button" class="btn btn-outline-warning" title="Previous"><i class="far fa-caret-square-left fa-2x"></i></button>
     </div>
     <div class="col-sm-8 align-center">
-      <button type="button" class="btn btn-outline-warning"><i class="fab fa-telegram-plane fa-2x"></i></button>
+      <button type="button" class="btn btn-outline-warning" title="When you're done with all questions, press me!!"><i class="fab fa-telegram-plane fa-2x"></i></button>
     </div>
     <div class="col-sm-2 align-right">
-      <button type="button" class="btn btn-outline-warning">
+      <button type="button" class="btn btn-outline-warning" title="Next">
         <i class="far fa-caret-square-right fa-2x"></i>
       </button>
     </div>

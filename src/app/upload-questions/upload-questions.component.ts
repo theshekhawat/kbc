@@ -7,10 +7,6 @@ import { IQuizQuestionsSet } from '../model/IQuizQuestionsSet';
   styleUrls: ['./upload-questions.component.css']
 })
 export class UploadQuestionsComponent implements OnInit {
-
-  private questionSetArray:Array<IQuizQuestionsSet>;
-  public questionSet: IQuizQuestionsSet;
-  public optionsArray: Array<string> = ['optionOne', 'optionTwo', 'optionThree', 'optionFour'];
   constructor() {
     this.questionSet = {
       audiencePoll: null,
@@ -19,19 +15,23 @@ export class UploadQuestionsComponent implements OnInit {
       optionTwo: '',
       optionThree: '',
       optionFour: '',
-      rightAnswer: this.optionsArray[0],
+      rightAnswer: '',
       information: ''
-    }
+    };
   }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.questionSetArray); }
+
+  private questionSetArray: Array<IQuizQuestionsSet>;
+  public questionSet: IQuizQuestionsSet;
+  public optionsArray: Array<string> = ['optionOne', 'optionTwo', 'optionThree', 'optionFour'];
+
+  submitted = false;
 
   ngOnInit(): void {
   }
 
-  submitted = false;
-
   onSubmit() { this.submitted = true; }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.questionSetArray); }
 
   }

@@ -5,25 +5,25 @@
     </div>
     <div class="left-sidebar alert raised-block text-white card-style blue-background">
         <div class="row form-group">
-            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineAskTheAudienceLocked" src={{_utilities.imageSourceAskTheAudience}} 
+            <img class="col-sm-4 image-cursor" [class.zoom]="!utilitiesService.lifelineAskTheAudienceLocked" src={{utilitiesService.imageSourceAskTheAudience}} 
             alt="one" (click)="getTheLifeline('audience-poll')">
 
             <img class="col-sm-4 image-cursor"
-            [class.zoom]="!_utilities.lifelineFlipTheQuestionLocked" src={{_utilities.imageSourceFlipTheQuestion}} alt="two" 
+            [class.zoom]="!utilitiesService.lifelineFlipTheQuestionLocked" src={{utilitiesService.imageSourceFlipTheQuestion}} alt="two" 
             (click)="getTheLifeline('switch-the-question')">
 
-            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineFiftyFiftyLocked" src={{_utilities.imageSourceFiftyFifty}}
+            <img class="col-sm-4 image-cursor" [class.zoom]="!utilitiesService.lifelineFiftyFiftyLocked" src={{utilitiesService.imageSourceFiftyFifty}}
                 alt="three" (click)="getTheLifeline('fifty-fifty')">
         </div>
         <div class="row form-group">
-            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineDoubleChanceLocked" src={{_utilities.imageSourceDoubleChance}}
+            <img class="col-sm-4 image-cursor" [class.zoom]="!utilitiesService.lifelineDoubleChanceLocked" src={{utilitiesService.imageSourceDoubleChance}}
             alt="three" (click)="getTheLifeline('double-chance')">
 
-             <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineExtraTimeLocked" 
-            src={{this._utilities.imageSourceExtraTime}} alt="three" (click)="getTheLifeline('extra-time')"> 
+             <img class="col-sm-4 image-cursor" [class.zoom]="!utilitiesService.lifelineExtraTimeLocked" 
+            src={{this.utilitiesService.imageSourceExtraTime}} alt="three" (click)="getTheLifeline('extra-time')"> 
 
-            <img class="col-sm-4 image-cursor" [class.zoom]="!_utilities.lifelineAskTheExpertLocked" 
-            src={{this._utilities.imageSourceAskTheExpert}} alt="three" (click)="getTheLifeline('ask-the-expert')">
+            <img class="col-sm-4 image-cursor" [class.zoom]="!utilitiesService.lifelineAskTheExpertLocked" 
+            src={{this.utilitiesService.imageSourceAskTheExpert}} alt="three" (click)="getTheLifeline('ask-the-expert')">
         </div>
         <div id="lifeline-extended" class="row form-group" [ngbCollapse]="isCollapsed">
             <div class="col-sm-4">
@@ -56,7 +56,7 @@
                 <div class="card card-style blue-background">
                     <button class="btn btn-default shadow-none" [disabled]="usernameText.invalid"
                         (click)="startNewGame('name.value')">
-                        <h4><i class="fas fa-play"></i> {{_utilities.startGameHeading}}</h4>
+                        <h4><i class="fas fa-play"></i> {{utilitiesService.startGameHeading}}</h4>
                     </button>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <div class="card card-style dark-blue-background">
                     <button class="btn btn-default align-center shadow-none" [disabled]="usernameText.invalid"
                         (click)="quitTheGame()">
-                        <h4><i class="fas fa-stop"> {{_utilities.quitGameHeading}}</i></h4>
+                        <h4><i class="fas fa-stop"> {{utilitiesService.quitGameHeading}}</i></h4>
                     </button>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <div class="card card-style dark-blue-background">
                     <button class="btn btn-default shadow-lg" [disabled]="usernameText.invalid"
                         (click)="showNextQuestion()">
-                        <h4><i class="fas fa-forward"> {{_utilities.nextQuestionHeading}}</i></h4>
+                        <h4><i class="fas fa-forward"> {{utilitiesService.nextQuestionHeading}}</i></h4>
                     </button>
                 </div>
             </div>
@@ -181,53 +181,59 @@
         <div class="row form-group">
             <div class="col-sm-6">
                 <div class="card-style blue-background"
-                    [ngClass]="{'yellow-background':(_utilities.isOptionOneLocked == true), 
-                    'green-background': _utilities.rightAnswerOptionOne == true, 'red-background': _utilities.wrongAnswerOptionOne == true }">
-                    <h4 #optionOnePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionOne === true"
-                        class="alert align-center image-cursor" (click)="lockOptionAndWait(1, _utilities.isOptionOneEnabled)">Option 1
+                    [ngClass]="{'yellow-background':(utilitiesService.isOptionOneLocked == true), 
+                    'green-background': utilitiesService.rightAnswerOptionOne == true, 'red-background': utilitiesService.wrongAnswerOptionOne == true }">
+                    <h4 #optionOnePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionOne === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(1, utilitiesService.isOptionOneEnabled)">Option 1
                     </h4>
                 </div>
-                <div *ngIf="_utilities.audiencePollOptionOnePercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h4 class="text-white">{{_utilities.audiencePollOptionOnePercentage}}</h4>
+                <div *ngIf="utilitiesService.audiencePollOptionOnePercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h4 class="text-white">{{utilitiesService.audiencePollOptionOnePercentage}}</h4>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card-style blue-background"
-                    [ngClass]="{'yellow-background':(_utilities.isOptionTwoLocked == true), 
-                    'green-background': _utilities.rightAnswerOptionTwo == true, 'red-background': _utilities.wrongAnswerOptionTwo == true }">
-                    <h4 #optionTwoPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionTwo === true"
-                        class="alert align-center image-cursor" (click)="lockOptionAndWait(2, _utilities.isOptionTwoEnabled)">Option 2
+                    [ngClass]="{'yellow-background':(utilitiesService.isOptionTwoLocked == true), 
+                    'green-background': utilitiesService.rightAnswerOptionTwo == true, 'red-background': utilitiesService.wrongAnswerOptionTwo == true }">
+                    <h4 #optionTwoPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionTwo === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(2, utilitiesService.isOptionTwoEnabled)">Option 2
                     </h4>
                 </div>
-                <div *ngIf="_utilities.audiencePollOptionTwoPercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h4 class="text-white">{{_utilities.audiencePollOptionTwoPercentage}}</h4>
+                <div *ngIf="utilitiesService.audiencePollOptionTwoPercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h4 class="text-white">{{utilitiesService.audiencePollOptionTwoPercentage}}</h4>
                 </div>
             </div>
         </div>
         <div class="row form-group">
             <div class="col-sm-6">
                 <div class="card-style blue-background"
-                    [ngClass]="{'yellow-background':(_utilities.isOptionThreeLocked == true), 
-                    'green-background': _utilities.rightAnswerOptionThree == true, 'red-background': _utilities.wrongAnswerOptionThree == true }">
-                    <h4 #optionThreePlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionThree === true"
-                        class="alert align-center image-cursor" (click)="lockOptionAndWait(3, _utilities.isOptionThreeEnabled)">Option 3
+                    [ngClass]="{'yellow-background':(utilitiesService.isOptionThreeLocked == true), 
+                    'green-background': utilitiesService.rightAnswerOptionThree == true, 'red-background': utilitiesService.wrongAnswerOptionThree == true }">
+                    <h4 #optionThreePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionThree === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(3, utilitiesService.isOptionThreeEnabled)">Option 3
                     </h4>
                 </div>
-                <div *ngIf="_utilities.audiencePollOptionThreePercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h4 class="text-white">{{_utilities.audiencePollOptionThreePercentage}}</h4>
+                <div *ngIf="utilitiesService.audiencePollOptionThreePercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h4 class="text-white">{{utilitiesService.audiencePollOptionThreePercentage}}</h4>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card-style blue-background"
-                    [ngClass]="{'yellow-background':(_utilities.isOptionFourLocked == true), 
-                    'green-background': _utilities.rightAnswerOptionFour == true, 'red-background': _utilities.wrongAnswerOptionFour == true }">
-                    <h4 #optionFourPlaceHolder [class.rightAnswer-background]="_utilities.rightAnswerOptionFour === true"
-                        class="alert align-center image-cursor" (click)="lockOptionAndWait(4, _utilities.isOptionFourEnabled)">Option 4
+                    [ngClass]="{'yellow-background':(utilitiesService.isOptionFourLocked == true), 
+                    'green-background': utilitiesService.rightAnswerOptionFour == true, 'red-background': utilitiesService.wrongAnswerOptionFour == true }">
+                    <h4 #optionFourPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionFour === true"
+                        class="alert align-center image-cursor" (click)="lockOptionAndWait(4, utilitiesService.isOptionFourEnabled)">Option 4
                     </h4>
                 </div>
-                <div *ngIf="_utilities.audiencePollOptionFourPercentage" class="col-sm-2 text-white audience-poll keep-right">
-                    <h4 class="text-white">{{_utilities.audiencePollOptionFourPercentage}}</h4>
+                <div *ngIf="utilitiesService.audiencePollOptionFourPercentage" class="col-sm-2 text-white audience-poll keep-right">
+                    <h4 class="text-white">{{utilitiesService.audiencePollOptionFourPercentage}}</h4>
                 </div>
+            </div>
+        </div>
+        <div class="row form-group px-2 align-center" style="border: 0px solid goldenrod;margin-top: -1%;">
+            <div class="col-sm-12 text-white py-1 wrap-word">
+                <i class="fas fa-info-circle fa-lg text-color-style" aria-hidden="true"></i>&nbsp;
+                <small #information>{{utilitiesService.questionInformation}}</small>
             </div>
         </div>
         <div class="row form-group align-center">
@@ -236,10 +242,10 @@
             </div>
         </div>
     </main>
-    <div class="row form-group px-2 align-center" style="border: 0px solid goldenrod;margin-top: -1%;">
+    <!-- <div class="row form-group px-2 align-center" style="border: 0px solid goldenrod;margin-top: -1%;">
         <div class="col-sm-12 text-white py-1 wrap-word">
             <i class="fas fa-info-circle fa-lg text-color-style" aria-hidden="true"></i>&nbsp;
-            <small #information>{{_utilities.questionInformation}}</small>
+            <small #information>{{utilitiesService.questionInformation}}</small>
         </div>
-    </div>
+    </div> -->
 </div>

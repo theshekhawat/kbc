@@ -1,0 +1,169 @@
+{
+    "Questions": [
+        {
+          "question":       "How many days are there in a year (Not a leap year) ?",
+          "optionOne":      "300 days",
+          "optionTwo":      "364 days",
+          "optionThree":    "366 days",
+          "optionFour":     "365 days",
+          "rightAnswer":    "optionFour",
+          "audiencePoll":   "5, 10, 5, 80, 0",
+          "amount":         "5,000",
+          "information":    "There are 365 days in a non-leap year. Because, February has 28 days (not 29 like in leap year)."
+        },
+        {
+            "question":    "What is the national fruit of India ?",
+            "optionOne":   "Avocado",
+            "optionTwo":   "Mango",
+            "optionThree": "Orange",
+            "optionFour":  "Banana",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"20, 65, 5, 15, 0",
+            "amount":      "10,000",
+            "information": "In India there are over 100 varieties of mangoes, in different sizes, shapes and colours."
+        },
+        {
+            "question":    "The baby of a cat is called a _______",
+            "optionOne":   "Pup",
+            "optionTwo":   "Fawn",
+            "optionThree": "Cub",
+            "optionFour":  "Kitten",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"15, 5, 15, 65, 0",
+            "amount":      "20,000",
+            "information": "Pup: several species of animals, such as: Dog, Fox: Cub, Fawn:Deer and Kitten:Cat"
+        },
+        {
+            "question":    "Which of the following months has 30 days ?",
+            "optionOne":   "July",
+            "optionTwo":   "June",
+            "optionThree": "March",
+            "optionFour":  "August",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 90, 3, 2, 0",
+            "amount":      "40,000",
+            "information": "One year has 4 months that are 30 days long and 7 months that are 31 days long. February is the only month that is 28 days long in common years and 29 days long in leap years."
+        },
+        {
+            "question":    "We are able to taste food because of which sensory organ ?",
+            "optionOne":   "Skin",
+            "optionTwo":   "Tongue",
+            "optionThree": "Eyes",
+            "optionFour":  "Ears",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 65, 15, 18, 0",
+            "amount":      "80,000",
+            "information": "Taste buds are sensory organs that are found on your tongue and allow you to experience tastes that are sweet, salty, sour, and bitter."
+        },
+        {
+            "question":    "Which of the following is largest mammal on earth ?",
+            "optionOne":   "Elephant",
+            "optionTwo":   "Hippopotamus",
+            "optionThree": "White Rhinoceros",
+            "optionFour":  "Blue Whale",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"8, 5, 25, 62, 0",
+            "amount":      "1,60,000",
+            "information": "The largest known animal on Earth is the blue whale. Mature blue whales can measure anywhere from 75 feet to 100 feet from head to tail, and can weigh as much as 150 tons."
+        },
+        {
+            "question":    "How many bones are there in the human body ?",
+            "optionOne":   "120",
+            "optionTwo":   "206",
+            "optionThree": "410",
+            "optionFour":  "520",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 78, 5, 5, 0",
+            "amount":      "3,20,000",
+            "information": "The adult human body has 206 bones!."
+        },
+        {
+            "question":    "In which of the following cities the first private channel of FM Radio was started ?",
+            "optionOne":   "Bengaluru",
+            "optionTwo":   "Chennai",
+            "optionThree": "Mumbai",
+            "optionFour":  "Kolkata",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"42, 8, 15, 15, 20",
+            "amount":      "6,40,000",
+            "information": "In 2001, India's first private FM station – Radio City, Bangalore – came on air, ending an era of state broadcasting that began in 1930."
+        },
+        {
+            "question":    "Which one of the following pairs is not matched correctly ?",
+            "optionOne":   "Dehradun - U.P.",
+            "optionTwo":   "Shimla-Himachal Pradesh",
+            "optionThree": "Darjeeling - West Bengal",
+            "optionFour":  "Panchmarhi - M.P.",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"80, 8, 8, 2, 2",
+            "amount":      "12,50,000",
+            "information": "Dehradun, is the winter capital and most populous city in the Indian state of Uttarakhand, Gairsain being the summer capital."
+        },
+        {
+            "question":    "The science dealing with the study of teeth is known as ?",
+            "optionOne":   "Ornithology",
+            "optionTwo":   "Odontology",
+            "optionThree": "Phenology",
+            "optionFour":  "Cosmology",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"2, 88, 6, 1, 3",
+            "amount":      "25 Lakh",
+            "information": "The term odontology is derived from Ancient Greek word (odoús, \"tooth\")) – the study of the structure, development, and abnormalities of the teeth."
+        },
+        {
+            "question":    "In terms of area, India is the _____ largest country of the world.",
+            "optionOne":   "Second",
+            "optionTwo":   "Fourth",
+            "optionThree": "Seventh",
+            "optionFour":  "Sixth",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"12, 5, 78, 5, 0",
+            "amount":      "50 Lakh",
+            "information": "In terms of landmass, India comes after Russia, Canada, China, USA, Brazil and Australia in that order."
+        },
+        {
+            "question":    "Which of the following is also known as 'White Coal'?",
+            "optionOne":   "Uranium",
+            "optionTwo":   "Hydro Electricity",
+            "optionThree": "Diamond",
+            "optionFour":  "Ice",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 15, 58, 15, 0",
+            "amount":      "1 Crore",
+            "information": "Hydroelectricity, is a form of energy that harnesses the power of water in motion—such as water flowing over a waterfall—to generate electricity, hence saving coal."
+        },
+        {
+            "question":    "PSLV stands for ?",
+            "optionOne":   "Polish Satellite Launch Vehicle",
+            "optionTwo":   "Polar Satellite Launch Vehicle",
+            "optionThree": "Perfect Satellite Launching Verifier",
+            "optionFour":  "Preparatory Satellite Launching Vehicle",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 60, 18, 15, 5",
+            "amount":      "3 Crore",
+            "information": "PSLV is a third generation rocket launcher designed by ISRO. It is an expendable launch vehicle which can place remote sensing satellites into sun synchronous orbit (SSO) and small sized spacecraft into geostationary transfer orbit."
+        },
+        {
+            "question":    "The first astronaut to walk in outer space is ?",
+            "optionOne":   "Aleksei Leonov",
+            "optionTwo":   "Yuri Gagarin",
+            "optionThree": "Neil Armstrong",
+            "optionFour":  "Dave Scott",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"15, 50, 10, 15, 10",
+            "amount":      "5 Crore",
+            "information": "Yuri Alekseyevich Gagarin was a Soviet Air Forces pilot and cosmonaut who became the first human to journey into outer space."
+        },
+        {
+            "question":    "Which country is known as the ‘Land of Thousand Lakes’ ?",
+            "optionOne":   "Norway",
+            "optionTwo":   "Canada",
+            "optionThree": "Ireland",
+            "optionFour":  "Finland",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"10, 15, 15, 50, 10",
+            "amount":      "7 Crore",
+            "information": "Egg white is the clear liquid (also called the albumen or the glair/glaire) contained within an egg."
+        }
+      ]
+    }

@@ -7,7 +7,7 @@ import { AudiencePollComponent } from './audience-poll/audience-poll.component';
 import { DataService } from '../services/data.service';
 import { ConstantsService } from '../services/constants.service';
 import { GameShowUtilitiesService } from '../services/utilities.service';
-import { TimerComponent } from "./timer/timer.component";
+import { TimerComponent } from './timer/timer.component';
 
 @Component({
   selector: 'app-game',
@@ -17,38 +17,38 @@ import { TimerComponent } from "./timer/timer.component";
 })
 export class GameComponent implements OnInit {
   //#region view-child
-  @ViewChild('questionPlaceholder', { static: true }) questionElement:        ElementRef;
-  @ViewChild('optionOnePlaceHolder', { static: true }) optionOneElement:      ElementRef;
-  @ViewChild('optionTwoPlaceHolder', { static: true }) optionTwoElement:      ElementRef;
-  @ViewChild('optionThreePlaceHolder', { static: true }) optionThreeElement:  ElementRef;
-  @ViewChild('optionFourPlaceHolder', { static: true }) optionFourElement:    ElementRef;
-  @ViewChild('information', { static: true }) informationElement:             ElementRef;
+  @ViewChild('questionPlaceholder', { static: true }) questionElement: ElementRef;
+  @ViewChild('optionOnePlaceHolder', { static: true }) optionOneElement: ElementRef;
+  @ViewChild('optionTwoPlaceHolder', { static: true }) optionTwoElement: ElementRef;
+  @ViewChild('optionThreePlaceHolder', { static: true }) optionThreeElement: ElementRef;
+  @ViewChild('optionFourPlaceHolder', { static: true }) optionFourElement: ElementRef;
+  @ViewChild('information', { static: true }) informationElement: ElementRef;
   //#endregion
 
   //#region public-properties
-  public currentWinnings:       string;
-  public guaranteedWinnings:    string;
-  public username:              string  = ConstantsService.emptyString;
-  public isNextQuestionAllowed: boolean = false;
-  public hasOptionBeenLocked:   boolean = false;
-  public isGameReset:           boolean = false;
-  public isCollapsed:           boolean = true;
-  public arrayIndex:            number;
+  public currentWinnings: string;
+  public guaranteedWinnings: string;
+  public username: string  = ConstantsService.emptyString;
+  public isNextQuestionAllowed = false;
+  public hasOptionBeenLocked = false;
+  public isGameReset = false;
+  public isCollapsed = true;
+  public arrayIndex: number;
   //#endregion
 
   //#region private-properties
-  private questions:              Array<string>;
+  private questions: Array<string>;
   private flippedQuestionDetails: IQuizQuestionsSet;
-  private winningDetails:         Array<string>;
+  private winningDetails: Array<string>;
   //#endregion
 
   constructor(
-    private _audioManager: AudioManagerService,
-    private _quizInformationDetails: QuizInformationDetailsService,
+    private audioManagerService: AudioManagerService,
+    private quizInformationDetailsService: QuizInformationDetailsService,
     private modalService: NgbModal,
-    private _data: DataService,
-    public _utilities: GameShowUtilitiesService,
-    public _timerComponent: TimerComponent
+    private dataService: DataService,
+    public utilitiesService: GameShowUtilitiesService,
+    public timerComponent: TimerComponent
     ) {
     this.arrayIndex                 = 0;
     this.username                   = ConstantsService.emptyString;
@@ -62,13 +62,13 @@ export class GameComponent implements OnInit {
     this.prepareWinningsDetails();
   }
   checkIsBrowserMobile() {
-    if (this._utilities.isMobile()) {
-      this._utilities.startGameHeading = this._utilities.quitGameHeading = this._utilities.nextQuestionHeading = '';
+    if (this.utilitiesService.isMobile()) {
+      this.utilitiesService.startGameHeading = this.utilitiesService.quitGameHeading = this.utilitiesService.nextQuestionHeading = '';
     }
   }
 
   getTheLifeline(lifeline: string) {
-    if (this._utilities.hasGameStarted && !this.hasOptionBeenLocked) {
+    if (this.utilitiesService.hasGameStarted && !this.hasOptionBeenLocked) {
       switch (lifeline) {
         case ConstantsService.fiftyFifty:
           this.lifeLineFiftyFifty();
@@ -93,91 +93,99 @@ export class GameComponent implements OnInit {
   }
 
   startNewGame(username: string) {
-    this._utilities.hasGameStarted = true;
-    if (this.arrayIndex == 0 && username.length) {
-      this._audioManager.stopIfAudioIsPlaying();
-      this._audioManager.playBackgroundSound(ConstantsService.startNewGameAudioFilePath);
+    this.utilitiesService.hasGameStarted = true;
+    if (this.arrayIndex === 0 && username.length) {
+      this.audioManagerService.stopIfAudioIsPlaying();
+      this.audioManagerService.playBackgroundSound(ConstantsService.startNewGameAudioFilePath);
       this.presentQuestion();
     }
   }
 
   showNextQuestion() {
-    if (this._utilities.hasGameStarted && this.hasOptionBeenLocked && this.isNextQuestionAllowed) {
+    if (this.utilitiesService.hasGameStarted && this.hasOptionBeenLocked && this.isNextQuestionAllowed) {
       this.resetOptions();
-      this._utilities.setLifeLines(false);
-      this._audioManager.stopIfAudioIsPlaying();
-      this._audioManager.playBackgroundSound(ConstantsService.showNextQuestionAudioFilePath);
+      this.utilitiesService.setLifeLines(false);
+      this.audioManagerService.stopIfAudioIsPlaying();
+      this.audioManagerService.playBackgroundSound(ConstantsService.showNextQuestionAudioFilePath);
       this.presentQuestion();
     }
   }
 
   quitTheGame() {
-    if (this._utilities.hasGameStarted) {
-      this._audioManager.playBackgroundSound(ConstantsService.quitTheGameAudioFilePath);
+    if (this.utilitiesService.hasGameStarted) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.quitTheGameAudioFilePath);
       this.resetTheGame();
       this.resetOptions();
-      this._utilities.setLifeLines(false);
+      this.utilitiesService.setLifeLines(false);
     }
   }
 
   lockOptionAndWait(optionNumber: number, isEnabled: boolean) {
-    if (this._utilities.hasGameStarted && isEnabled) {
-      this.hasOptionBeenLocked = true;
-      this._audioManager.playBackgroundSound(ConstantsService.finalAnswerAudioFilePath);
-
-      var lockedAnswer: number;
-      lockedAnswer = this.getsLockedOption(optionNumber);
-      this._utilities.setOptions(false);
+    if (this.utilitiesService.hasGameStarted && isEnabled) {
       this.isNextQuestionAllowed = false;
-      setTimeout(this.optionLocked , 4000, lockedAnswer);
+      this.hasOptionBeenLocked = true;
+      this.audioManagerService.playBackgroundSound(ConstantsService.finalAnswerAudioFilePath);
+
+      let lockedAnswer: number;
+      lockedAnswer = this.getsLockedOption(optionNumber);
+      this.utilitiesService.setOptions(false);
+      this.isNextQuestionAllowed = false;
+      this.timerComponent.pauseTheClock();
+      if (this.utilitiesService.lifelineDoubleChanceLocked ) {
+        this.optionLocked(lockedAnswer);
+      }
+      else {
+        setTimeout(this.optionLocked , 4000, lockedAnswer);
+      }
     }
   }
 
   optionLocked = async (lockedAnswer: number) =>  {
-    this._utilities.setOptions(true);
-    this.isNextQuestionAllowed = true;
-      var correctAnswer: number;
-      let choice: string;
-      if (this._utilities.lifelineFlipTheQuestionLocked && this._utilities.isFlippedQuestionPresented) {
+    this.utilitiesService.setOptions(true);
+    let correctAnswer: number;
+    let choice: string;
+    if (this.utilitiesService.lifelineFlipTheQuestionLocked && this.utilitiesService.isFlippedQuestionPresented) {
          choice = this.flippedQuestionDetails.rightAnswer;
       }
       else {
+        // tslint:disable-next-line: no-string-literal
         choice = this.questions['Questions'][this.arrayIndex - 1].rightAnswer;
       }
-      correctAnswer = this.getsRightAnswer(choice);
+    correctAnswer = this.getsRightAnswer(choice);
 
-      if (lockedAnswer == correctAnswer) {
+    if (lockedAnswer === correctAnswer) {
         if (this.isCollapsed) {
           this.calculateWinnings();
           this.isNextQuestionAllowed = true;
         }
         else {
           this.isNextQuestionAllowed = false;
-          this._utilities.isFlippedQuestionPresented = false;
+          this.utilitiesService.isFlippedQuestionPresented = false;
         }
 
-        this._utilities.setOptions(false);
-        this._audioManager.playBackgroundSound(ConstantsService.correctAnswerAudioFilePath);
+        this.utilitiesService.setOptions(false);
+        this.audioManagerService.playBackgroundSound(ConstantsService.correctAnswerAudioFilePath);
       }
       else {
-        if (this._utilities.isFirstGuessRight()) {
+        if (this.utilitiesService.isFirstGuessRight()) {
+          this.getsWrongOption(lockedAnswer);
           return;
         }
 
         if (this.isCollapsed) {
           this.calculateWinnings();
-          this._utilities.setOptions(false);
+          this.utilitiesService.setOptions(false);
           this.currentWinnings = this.guaranteedWinnings;
         }
         else {
-          this._utilities.isFlippedQuestionPresented = false;
+          this.utilitiesService.isFlippedQuestionPresented = false;
         }
         this.isNextQuestionAllowed = false;
         this.getsWrongOption(lockedAnswer);
-        this._audioManager.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
+        this.audioManagerService.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
       }
-      this.informationElement.nativeElement.innerHTML     = this.questions['Questions'][this.arrayIndex - 1].information;
-      this.stopTheTimer();
+    this.informationElement.nativeElement.innerHTML     = this.questions[ConstantsService.Questions][this.arrayIndex - 1].information;
+    this.stopTheTimer();
   }
 
   applyFlipTheQuestionLifeLine(shouldApplyFlipTheQuestion: any) {
@@ -194,31 +202,31 @@ export class GameComponent implements OnInit {
   }
 
   private startTheTimer() {
-    var deadline = new Date(Date.parse(new Date().toString()) + 45 * 1000);
-    this._timerComponent.startTheClock(deadline);
+    const deadline = new Date(Date.parse(new Date().toString()) + 4500 * 1000);
+    this.timerComponent.startTheClock(deadline);
   }
 
   private stopTheTimer() {
-    this._timerComponent.stopTheClock();
+    this.timerComponent.stopTheClock();
   }
 
   private getsRightAnswer(choice: string) {
-    let correctAnswer:number;
+    let correctAnswer: number;
     switch (choice) {
       case ConstantsService.caseOptionOne:
-        this._utilities.rightAnswerOptionOne   = true;
+        this.utilitiesService.rightAnswerOptionOne   = true;
         correctAnswer = 1;
         break;
       case ConstantsService.caseOptionTwo:
-        this._utilities.rightAnswerOptionTwo   = true;
+        this.utilitiesService.rightAnswerOptionTwo   = true;
         correctAnswer = 2;
         break;
       case ConstantsService.caseOptionThree:
-        this._utilities.rightAnswerOptionThree = true;
+        this.utilitiesService.rightAnswerOptionThree = true;
         correctAnswer = 3;
         break;
       case ConstantsService.caseOptionFour:
-        this._utilities.rightAnswerOptionFour  = true;
+        this.utilitiesService.rightAnswerOptionFour  = true;
         correctAnswer = 4;
         break;
     }
@@ -226,22 +234,22 @@ export class GameComponent implements OnInit {
   }
 
   private getsLockedOption(optionNumber: number) {
-    var lockedAnswer: number;
+    let lockedAnswer: number;
     switch (optionNumber) {
       case 1:
-        this._utilities.isOptionOneLocked    = true;
+        this.utilitiesService.isOptionOneLocked    = true;
         lockedAnswer = 1;
         break;
       case 2:
-        this._utilities.isOptionTwoLocked    = true;
+        this.utilitiesService.isOptionTwoLocked    = true;
         lockedAnswer = 2;
         break;
       case 3:
-        this._utilities.isOptionThreeLocked  = true;
+        this.utilitiesService.isOptionThreeLocked  = true;
         lockedAnswer = 3;
         break;
       case 4:
-        this._utilities.isOptionFourLocked   = true;
+        this.utilitiesService.isOptionFourLocked   = true;
         lockedAnswer = 4;
         break;
     }
@@ -251,29 +259,29 @@ export class GameComponent implements OnInit {
   private getsWrongOption(optionNumber: number) {
     switch (optionNumber) {
       case 1:
-        this._utilities.wrongAnswerOptionOne    = true;
+        this.utilitiesService.wrongAnswerOptionOne    = true;
         break;
       case 2:
-        this._utilities.wrongAnswerOptionTwo    = true;
+        this.utilitiesService.wrongAnswerOptionTwo    = true;
         break;
       case 3:
-        this._utilities.wrongAnswerOptionThree  = true;
+        this.utilitiesService.wrongAnswerOptionThree  = true;
         break;
       case 4:
-        this._utilities.wrongAnswerOptionFour   = true;
+        this.utilitiesService.wrongAnswerOptionFour   = true;
         break;
     }
   }
 
   private getQuizQuestions() {
-    this._quizInformationDetails.getsQuestionsList().subscribe(
+    this.quizInformationDetailsService.getsQuestionsList().subscribe(
       (data) => this.questions = data,
       (error) => (console.log(error))
     );
   }
 
   private calculateWinnings() {
-    if (this._utilities.hasGameStarted) {
+    if (this.utilitiesService.hasGameStarted) {
       this.currentWinnings = this.winningDetails[this.arrayIndex - 1];
       if (this.arrayIndex - 1 > 3 && this.arrayIndex - 1 < 5) {
         this.guaranteedWinnings = ConstantsService.firstMilestoneAmount;
@@ -288,64 +296,64 @@ export class GameComponent implements OnInit {
   }
 
   private lifeLineDoubleChance() {
-    if (!this._utilities.lifelineDoubleChanceLocked) {
-      this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this._utilities.lifelineDoubleChanceLocked = true;
-      this._utilities.imageSourceDoubleChance = ConstantsService.doubleChanceDoneImageSourcePath;
+    if (!this.utilitiesService.lifelineDoubleChanceLocked) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.lifelineDoubleChanceLocked = true;
+      this.utilitiesService.imageSourceDoubleChance = ConstantsService.doubleChanceDoneImageSourcePath;
     }
   }
 
   private lifeLineFiftyFifty() {
-    if (!this._utilities.lifelineFiftyFiftyLocked) {
-      this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this._utilities.lifelineFiftyFiftyLocked = true;
-      this._utilities.imageSourceFiftyFifty = ConstantsService.fiftyFiftyDoneImageSourcePath;
-      switch (this.questions['Questions'][this.arrayIndex - 1].rightAnswer) {
+    if (!this.utilitiesService.lifelineFiftyFiftyLocked) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.lifelineFiftyFiftyLocked = true;
+      this.utilitiesService.imageSourceFiftyFifty = ConstantsService.fiftyFiftyDoneImageSourcePath;
+      switch (this.questions[ConstantsService.Questions][this.arrayIndex - 1].rightAnswer) {
         case ConstantsService.caseOptionOne:
           this.optionFourElement.nativeElement.innerHTML  = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this._utilities.isOptionFourEnabled = false;
-          this._utilities.isOptionThreeEnabled = false;
+          this.utilitiesService.isOptionFourEnabled = false;
+          this.utilitiesService.isOptionThreeEnabled = false;
           break;
         case ConstantsService.caseOptionTwo:
           this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this._utilities.isOptionOneEnabled = false;
-          this._utilities.isOptionThreeEnabled = false;
+          this.utilitiesService.isOptionOneEnabled = false;
+          this.utilitiesService.isOptionThreeEnabled = false;
           break;
         case ConstantsService.caseOptionThree:
           this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
           this.optionTwoElement.nativeElement.innerHTML   = ConstantsService.exclamation;
-          this._utilities.isOptionOneEnabled = false;
-          this._utilities.isOptionTwoEnabled = false;
+          this.utilitiesService.isOptionOneEnabled = false;
+          this.utilitiesService.isOptionTwoEnabled = false;
           break;
         case ConstantsService.caseOptionFour:
           this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this._utilities.isOptionOneEnabled = false;
-          this._utilities.isOptionThreeEnabled = false;
+          this.utilitiesService.isOptionOneEnabled = false;
+          this.utilitiesService.isOptionThreeEnabled = false;
           break;
       }
     }
   }
 
   private lifeLineAskTheExpert() {
-    if (!this._utilities.lifelineAskTheExpertLocked) {
-      this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this._utilities.lifelineAskTheExpertLocked = true;
-      this._utilities.imageSourceAskTheExpert = ConstantsService.askTheExpertDoneImageSourcePath;
-      var query = this.questions['Questions'][this.arrayIndex - 1].question;
+    if (!this.utilitiesService.lifelineAskTheExpertLocked) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.lifelineAskTheExpertLocked = true;
+      this.utilitiesService.imageSourceAskTheExpert = ConstantsService.askTheExpertDoneImageSourcePath;
+      const query = this.questions[ConstantsService.Questions][this.arrayIndex - 1].question;
       window.open(`http://google.com/search?q=${query}`);
     }
   }
 
   private lifeLineAskTheAudience() {
-    if (!this._utilities.lifelineAskTheAudienceLocked) {
-      this._timerComponent.pauseTheClock();
-      this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this._utilities.lifelineAskTheAudienceLocked = true;
-      this._utilities.imageSourceAskTheAudience    = ConstantsService.askTheAudienceDoneImageSourcePath;
-      const modalRef = this.modalService.open(AudiencePollComponent, 
+    if (!this.utilitiesService.lifelineAskTheAudienceLocked) {
+      this.timerComponent.pauseTheClock();
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.lifelineAskTheAudienceLocked = true;
+      this.utilitiesService.imageSourceAskTheAudience    = ConstantsService.askTheAudienceDoneImageSourcePath;
+      const modalRef = this.modalService.open(AudiencePollComponent,
         {
           size: 'lg',
           centered: true,
@@ -353,27 +361,27 @@ export class GameComponent implements OnInit {
         });
       modalRef.componentInstance.name = ConstantsService.audiencePoll;
       modalRef.result.then((data) => {
-        //Close Event
+        // Close Event
         this.showAudiencePollPercentage();
-        this._timerComponent.resumeTheClock();
+        this.timerComponent.resumeTheClock();
       }, (reason) => {
-        //dismiss event
+        // dismiss event
         this.showAudiencePollPercentage();
-        this._timerComponent.resumeTheClock();
+        this.timerComponent.resumeTheClock();
       });
     }
   }
 
   private lifeLineFlipTheQuestion() {
-    if (!this._utilities.lifelineFlipTheQuestionLocked) {
-      this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this._utilities.imageSourceFlipTheQuestion = ConstantsService.switchTheQuestionDoneImageSourcePath;
-      this._utilities.lifelineFlipTheQuestionLocked = true;
+    if (!this.utilitiesService.lifelineFlipTheQuestionLocked) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.imageSourceFlipTheQuestion = ConstantsService.switchTheQuestionDoneImageSourcePath;
+      this.utilitiesService.lifelineFlipTheQuestionLocked = true;
       this.isCollapsed = false;
-        this._quizInformationDetails.getsFlipQuestionsList().subscribe(
+      this.quizInformationDetailsService.getsFlipQuestionsList().subscribe(
           (data) => {
             this.flippedQuestionDetails = data;
-            this._timerComponent.pauseTheClock();
+            this.timerComponent.pauseTheClock();
           },
           (error) => (console.log(error))
         );
@@ -381,31 +389,31 @@ export class GameComponent implements OnInit {
   }
 
   private lifeLineExtraTime() {
-  if (!this._utilities.lifelineExtraTimeLocked) {
-    this._audioManager.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-    this._utilities.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
-    this._utilities.lifelineExtraTimeLocked = true;
-    this._timerComponent.incrementTheClockBy(30);
+  if (!this.utilitiesService.lifelineExtraTimeLocked) {
+    this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+    this.utilitiesService.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
+    this.utilitiesService.lifelineExtraTimeLocked = true;
+    this.timerComponent.incrementTheClockBy(60);
   }
 }
 
   private showAudiencePollPercentage() {
-    var audiencePollDataArray = JSON.parse("[" + this.questions['Questions'][this.arrayIndex - 1].audiencePoll + "]");
-    this._utilities.audiencePollOptionOnePercentage    = audiencePollDataArray[0] + ConstantsService.percentageSign;
-    this._utilities.audiencePollOptionTwoPercentage    = audiencePollDataArray[1] + ConstantsService.percentageSign;
-    this._utilities.audiencePollOptionThreePercentage  = audiencePollDataArray[2] + ConstantsService.percentageSign;
-    this._utilities.audiencePollOptionFourPercentage   = audiencePollDataArray[3] + ConstantsService.percentageSign;
+    const audiencePollDataArray = JSON.parse('[' + this.questions[ConstantsService.Questions][this.arrayIndex - 1].audiencePoll + ']');
+    this.utilitiesService.audiencePollOptionOnePercentage    = audiencePollDataArray[0] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionTwoPercentage    = audiencePollDataArray[1] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionThreePercentage  = audiencePollDataArray[2] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionFourPercentage   = audiencePollDataArray[3] + ConstantsService.percentageSign;
   }
 
   private prepareWinningsDetails() {
-    this.winningDetails = this._utilities.prepareWinningDetails();
+    this.winningDetails = this.utilitiesService.prepareWinningDetails();
   }
 
   private resetOptions() {
-    this._utilities.resetOptions();
-    this._utilities.setOptions(true);
+    this.utilitiesService.resetOptions();
+    this.utilitiesService.setOptions(true);
     if (this.isCollapsed) {
-      this._utilities.isFlippedQuestionPresented       = false;
+      this.utilitiesService.isFlippedQuestionPresented       = false;
     }
     this.stopTheTimer();
   }
@@ -418,29 +426,29 @@ export class GameComponent implements OnInit {
     this.optionFourElement.nativeElement.innerHTML  = ConstantsService.optionFourTextPlaceHolder;
     this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this.arrayIndex                                 = 0;
-    this._utilities.hasGameStarted                  = false;
+    this.utilitiesService.hasGameStarted                  = false;
     this.username                                   = ConstantsService.emptyString;
     this.flippedQuestionDetails                     = null;
     this.isGameReset                                = true;
     this.currentWinnings                            = ConstantsService.zero;
     this.guaranteedWinnings                         = ConstantsService.zero;
     this.isCollapsed                                = true;
-    this._utilities.isFlippedQuestionPresented                 = true;
-    this._utilities.setInitialPathForLifeLineImages();
-    this._utilities.setLifeLines(false);
+    this.utilitiesService.isFlippedQuestionPresented                 = true;
+    this.utilitiesService.setInitialPathForLifeLineImages();
+    this.utilitiesService.setLifeLines(false);
   }
 
   private presentQuestion() {
-    this.questionElement.nativeElement.innerHTML        = this.questions['Questions'][this.arrayIndex].question;
-    this.optionOneElement.nativeElement.innerHTML       = this.questions['Questions'][this.arrayIndex].optionOne;
-    this.optionTwoElement.nativeElement.innerHTML       = this.questions['Questions'][this.arrayIndex].optionTwo;
-    this.optionThreeElement.nativeElement.innerHTML     = this.questions['Questions'][this.arrayIndex].optionThree;
-    this.optionFourElement.nativeElement.innerHTML      = this.questions['Questions'][this.arrayIndex].optionFour;
+    this.questionElement.nativeElement.innerHTML        = this.questions[ConstantsService.Questions][this.arrayIndex].question;
+    this.optionOneElement.nativeElement.innerHTML       = this.questions[ConstantsService.Questions][this.arrayIndex].optionOne;
+    this.optionTwoElement.nativeElement.innerHTML       = this.questions[ConstantsService.Questions][this.arrayIndex].optionTwo;
+    this.optionThreeElement.nativeElement.innerHTML     = this.questions[ConstantsService.Questions][this.arrayIndex].optionThree;
+    this.optionFourElement.nativeElement.innerHTML      = this.questions[ConstantsService.Questions][this.arrayIndex].optionFour;
     this.informationElement.nativeElement.innerHTML     = ConstantsService.informationAboutQuestion;
     this.isNextQuestionAllowed = true;
     this.hasOptionBeenLocked = false;
     this.arrayIndex++;
-    this._data.changeMessage(this.questions['Questions'][this.arrayIndex -1].audiencePoll);
+    this.dataService.changeMessage(this.questions[ConstantsService.Questions][this.arrayIndex - 1].audiencePoll);
     this.startTheTimer();
     this.playQuestionsBackgroundSound();
   }
@@ -452,25 +460,28 @@ export class GameComponent implements OnInit {
     this.optionThreeElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionThree;
     this.optionFourElement.nativeElement.innerHTML  = this.flippedQuestionDetails.optionFour;
     this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
-    this._data.changeMessage(this.flippedQuestionDetails.audiencePoll);
-    this._utilities.isFlippedQuestionPresented = true;
+    this.dataService.changeMessage(this.flippedQuestionDetails.audiencePoll);
+    this.utilitiesService.isFlippedQuestionPresented = true;
     this.startTheTimer();
     this.playQuestionsBackgroundSound();
   }
 
   private playQuestionsBackgroundSound() {
-    var soundToPlay: string;
-    if (this._utilities.parseNumber(this.currentWinnings) <= this._utilities.parseNumber(ConstantsService.firstMilestoneAmount)) {
+    let soundToPlay: string;
+    if (this.utilitiesService.parseNumber(this.currentWinnings) <
+    this.utilitiesService.parseNumber(ConstantsService.firstMilestoneAmount)) {
       soundToPlay = ConstantsService.easyQuestionsAudioFilePath;
     }
-    else if (this._utilities.parseNumber(this.currentWinnings) <= this._utilities.parseNumber(ConstantsService.secondMilestoneAmount)) {
+    else if (this.utilitiesService.parseNumber(this.currentWinnings) <
+    this.utilitiesService.parseNumber(ConstantsService.secondMilestoneAmount)) {
       soundToPlay = ConstantsService.mediumQuestionsAudioFilePath;
     }
-    else if (this._utilities.parseNumber(this.currentWinnings) <= this._utilities.parseNumber(ConstantsService.thirdMilestoneAmount)) {
+    else if (this.utilitiesService.parseNumber(this.currentWinnings) <
+    this.utilitiesService.parseNumber(ConstantsService.thirdMilestoneAmount)) {
       soundToPlay = ConstantsService.hardQuestionsAudioFilePath;
     }
-    this._audioManager.stopIfAudioIsPlaying();
-    this._audioManager.playBackgroundSound(soundToPlay);
+    this.audioManagerService.stopIfAudioIsPlaying();
+    this.audioManagerService.playBackgroundSound(soundToPlay);
   }
 
 }

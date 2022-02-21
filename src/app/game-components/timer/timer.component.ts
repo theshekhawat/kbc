@@ -6,35 +6,35 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-
-  @Output() clockStatus: EventEmitter<string>;
-  public timeRemaining: any;
-  private static observer: any;
-  private isPaused: boolean = false;
-  private pausedTime: any;
-  private isResumed: boolean = false;
-  private startTime: any;
-  private numberOfSecondsIncremented:number;
-  private isTimerTimeIncremented:boolean;
-  private isTimedOut:boolean = true;
   constructor() {
     this.clockStatus = new EventEmitter<string>();
    }
+  private static observer: any;
+
+  @Output() clockStatus: EventEmitter<string>;
+  public timeRemaining: any;
+  private isPaused = false;
+  private pausedTime: any;
+  private isResumed = false;
+  private startTime: any;
+  private numberOfSecondsIncremented: number;
+  private isTimerTimeIncremented: boolean;
+  private isTimedOut = true;
 
   ngOnInit(): void {
     TimerComponent.observer = this.clockStatus.observers;
   }
-  
+
   initializeClock(id: string, endtime: Date) {
-    var clock = document.getElementById(id);
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
-    var timeInterval = setInterval(() => {
+    const clock = document.getElementById(id);
+    const minutesSpan = clock.querySelector('.minutes');
+    const secondsSpan = clock.querySelector('.seconds');
+    const timeInterval = setInterval(() => {
     if (this.isTimerTimeIncremented) {
       endtime.setSeconds(endtime.getSeconds() + this.numberOfSecondsIncremented);
       this.isTimerTimeIncremented = false;
     }
-    if (this.timeRemaining == -1) {
+    if (this.timeRemaining === -1) {
       this.timeRemaining = 0;
     }
     else {
@@ -52,8 +52,8 @@ export class TimerComponent implements OnInit {
         }
       }
     }
-    var seconds = Math.floor((this.timeRemaining / 1000) % 60);
-    var minutes = Math.floor((this.timeRemaining / 1000 / 60) % 60);
+    const seconds = Math.floor((this.timeRemaining / 1000) % 60);
+    const minutes = Math.floor((this.timeRemaining / 1000 / 60) % 60);
     secondsSpan.innerHTML = ('0' + seconds).slice(-2);
     minutesSpan.innerHTML = ('0' + minutes).slice(-2);
     if (this.timeRemaining <= 0) {
@@ -71,11 +71,11 @@ export class TimerComponent implements OnInit {
       this.isTimedOut = false;
       this.isPaused = false;
       this.isResumed = false;
-    }  
+    }
   }
 
   startTheClock(deadline: Date) {
-    if (this.clockStatus.observers.length == 0 && TimerComponent.observer) {
+    if (this.clockStatus.observers.length === 0 && TimerComponent.observer) {
       this.clockStatus.observers = TimerComponent.observer;
     }
     this.startTime = deadline;

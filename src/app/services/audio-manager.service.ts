@@ -15,7 +15,7 @@ export class AudioManagerService {
     this.audio.src = sound;
     this.audio.load();
     this.audio.play();
-    this.audio.volume = 0.8;
+    this.audio.volume = 0.5;
   }
 
   stopIfAudioIsPlaying() {

@@ -1,0 +1,132 @@
+<app-navigation></app-navigation>
+<div id="content" class="container-fluid">
+    <div class="jumbotron py-2 align-center h3 col-sm-12 card-style blue-background text-white">Welcome to fastest
+        fingers first!
+    </div>
+    <div class="left-sidebar raised-block text-white card-style blue-background align-center">
+        <div class="row align-center py-2">
+            <!-- <div class="col-sm-12">
+                <input type="text" name="name" id="name" class="form-control blue-background text-style"
+                    autocomplete="off">
+            </div> -->
+            <div class="col-sm-12 py-2">
+                <app-timer></app-timer>
+            </div>
+            <div class="col-sm-10"></div>
+            <div class="col-sm-12 mb-3" *ngFor="let participant of listOfParticipants">
+                <div class="col-sm-12 card-style blue-background my-1 align-center">
+                    <h5 class="p-1">
+                        <i class="fas fa-user-tie fa-lg"></i> {{participant}} 00:00:00
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right-sidebar" class="card-style raised-block align-center blue-background">
+        <div class="row py-2 mx-4">
+            <div class="col-sm-12">
+                <h3 class="text-white">Correct Sequence</h3>
+            </div>
+            <div class="col-sm-12 alert-highlight blue-background my-4">
+                <h5 class="align-center image-cursor p-1">Option 1
+                </h5>
+            </div>
+            <div class="col-sm-12 alert-highlight blue-background my-4">
+                <h5 class="align-center image-cursor p-1">Option 2
+                </h5>
+            </div>
+            <div class="col-sm-12 alert-highlight blue-background my-4">
+                <h5 class="align-center image-cursor p-1">Option 3
+                </h5>
+            </div>
+            <div class="col-sm-12 alert-highlight blue-background my-4">
+                <h5 class="align-center image-cursor p-1">Option 4
+                </h5>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <div class="card-style blue-background">
+                    <h4 #questionPlaceholder class="alert align-center">Question</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <div class="card-style blue-background">
+                    <h4 class="alert align-center image-cursor">Option 1</h4>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-style blue-background">
+                    <h4 class="alert align-center image-cursor">Option 2
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <div class="card-style blue-background">
+                    <h4 class="alert align-center image-cursor">Option 3
+                    </h4>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-style blue-background">
+                    <h4 class="alert align-center image-cursor">Option 4
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group pt-3 pl-1 align-center">
+            <div class="col-sm-12 card-style blue-background">
+                <h4 class="alert row">
+                    <div class="col-sm-4">Sequence</div>
+                    <div class="col-sm-2">
+                        <select #firstSelect class="select-style" tabindex="1" autofocus>
+                            <option selected></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="select-style" tabindex="2">
+                            <option selected></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="select-style" tabindex="3">
+                            <option selected></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="select-style" tabindex="4" (focusout)="firstSelect.focus()">
+                            <option selected></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
+                    </div>
+                </h4>
+            </div>
+            <div class="col-sm-12 px-2 my-2">
+                <button class="btn btn-outline-warning">
+                    <i class="fas fa-check-square fa-2x"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+</div>

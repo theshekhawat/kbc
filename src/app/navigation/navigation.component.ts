@@ -9,19 +9,19 @@ import { ConstantsService } from '../services/constants.service';
 })
 export class NavigationComponent implements OnInit {
 
-  @ViewChild("sidebarNavigator") sidebar: ElementRef;
-  constructor(private _audioManager: AudioManagerService) { }
+  @ViewChild('sidebarNavigator') sidebar: ElementRef;
+  constructor(private audioManagerService: AudioManagerService) { }
 
   ngOnInit(): void {
-    this._audioManager.stopIfAudioIsPlaying();
-    this._audioManager.playBackgroundSound(ConstantsService.mainThemeAudioFilePath);
+    this.audioManagerService.stopIfAudioIsPlaying();
+    this.audioManagerService.playBackgroundSound(ConstantsService.mainThemeAudioFilePath);
   }
 
   openNav() {
-    this.sidebar.nativeElement.style.width = "100%";
+    this.sidebar.nativeElement.style.width = '100%';
   }
-  
+
   closeNav() {
-    this.sidebar.nativeElement.style.width = "0%";
+    this.sidebar.nativeElement.style.width = '0%';
   }
 }

@@ -1,0 +1,169 @@
+{
+    "Questions": [
+        {
+          "question":       "The idiom \"Black Sheep\" refers to ?",
+          "optionOne":      "An unworthy person",
+          "optionTwo":      "A costly item",
+          "optionThree":    "A dark shiny object",
+          "optionFour":     "A comedian",
+          "rightAnswer":    "optionOne",
+          "audiencePoll":   "80, 10, 5, 5, 0",
+          "amount":         "5,000",
+          "information":    "In the English language, black sheep is an idiom used to describe an odd or disreputable member of a group, especially within a family."
+        },
+        {
+            "question":    "अंतर के पट खोलना का अर्थ इनमें से क्या है ?",
+            "optionOne":   "सभी के साथ समान व्यवहार",
+            "optionTwo":   "संगठित मांग अथवा विचार प्रकट करना",
+            "optionThree": "हृदय की बात कह देना",
+            "optionFour":  "पलक झपकाए बिना",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"20, 5, 65, 15, 0",
+            "amount":      "10,000",
+            "information": "अन्तर के पट खोलना मुहावरे का अर्थ हृदय की बात कह देना होता है। वाक्य प्रयोग – \"गीता अपनी सहेली सीता के सामने अपने अन्तर के पट खोल देती है।\"."
+        },
+        {
+            "question":    "Who is known as \"Napoleon of India\" ?",
+            "optionOne":   "Ashoka",
+            "optionTwo":   "Chandragupt Maurya",
+            "optionThree": "Harshvardhan",
+            "optionFour":  "Samudragupt",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"15, 5, 15, 65, 0",
+            "amount":      "20,000",
+            "information": "Because of his great military conquests known from the 'Prayag Prashati' written by his courtier and poet Harisena, who also describes Samudragupt as the hero of a hundred battles."
+        },
+        {
+            "question":    "What is the term used to descibe a person who talks in sleep ?",
+            "optionOne":   "Somnambulist",
+            "optionTwo":   "Somniloquist",
+            "optionThree": "Insomnist",
+            "optionFour":  "Blabberer",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 90, 3, 2, 0",
+            "amount":      "40,000",
+            "information": "Somniloquy or sleep-talking is a parasomnia that refers to talking aloud while asleep."
+        },
+        {
+            "question":    "Who is known as the 'Father of Geometry' ?",
+            "optionOne":   "Pythagoras",
+            "optionTwo":   "Euclid",
+            "optionThree": "Aristotle",
+            "optionFour":  "Kepler",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 65, 15, 18, 0",
+            "amount":      "80,000",
+            "information": "Euclid, sometimes called Euclid of Alexandria to distinguish him from Euclid of Megara, was a Greek mathematician, often referred to as the \"father of geometry\"."
+        },
+        {
+            "question":    "Which is the fastest running train on Indian Railways ?",
+            "optionOne":   "New Delhi-Bhopal Shatabdi Express",
+            "optionTwo":   "New Delhi-Lucknow Shatabdi Express",
+            "optionThree": "New Delhi-Mumbai & Rajdhani Express",
+            "optionFour":  "New Delhi-Agra Gatimaan Express",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"8, 5, 25, 62, 0",
+            "amount":      "1,60,000",
+            "information": "Gatimaan Express is Indian Railways' fastest train, attaining speeds of 160 kmph between Delhi and Agra."
+        },
+        {
+            "question":    "Which is the first colour movie produced in India ?",
+            "optionOne":   "Madhumati",
+            "optionTwo":   "Kisan Kanya",
+            "optionThree": "Aan",
+            "optionFour":  "Do Bigha Zameen",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 78, 5, 5, 0",
+            "amount":      "3,20,000",
+            "information": "Kisan Kanya was a 1937 Hindi Cinecolor feature film which was directed by Moti B. Gidwani and produced by Ardeshir Irani of Imperial Pictures."
+        },
+        {
+            "question":    "In which of the following cities the first private channel of FM Radio was started ?",
+            "optionOne":   "Bengaluru",
+            "optionTwo":   "Chennai",
+            "optionThree": "Mumbai",
+            "optionFour":  "Kolkata",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"42, 8, 15, 15, 20",
+            "amount":      "6,40,000",
+            "information": "In 2001, India's first private FM station – Radio City, Bangalore – came on air, ending an era of state broadcasting that began in 1930."
+        },
+        {
+            "question":    "Which one of the following pairs is not matched correctly ?",
+            "optionOne":   "Dehradun - U.P.",
+            "optionTwo":   "Shimla-Himachal Pradesh",
+            "optionThree": "Darjeeling - West Bengal",
+            "optionFour":  "Panchmarhi - M.P.",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"80, 8, 8, 2, 2",
+            "amount":      "12,50,000",
+            "information": "Dehradun, is the winter capital and most populous city in the Indian state of Uttarakhand, Gairsain being the summer capital."
+        },
+        {
+            "question":    "The science dealing with the study of teeth is known as ?",
+            "optionOne":   "Ornithology",
+            "optionTwo":   "Odontology",
+            "optionThree": "Phenology",
+            "optionFour":  "Cosmology",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"2, 88, 6, 1, 3",
+            "amount":      "25 Lakh",
+            "information": "The term odontology is derived from Ancient Greek word (odoús, \"tooth\")) – the study of the structure, development, and abnormalities of the teeth."
+        },
+        {
+            "question":    "In terms of area, India is the _____ largest country of the world.",
+            "optionOne":   "Second",
+            "optionTwo":   "Fourth",
+            "optionThree": "Seventh",
+            "optionFour":  "Sixth",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"12, 5, 78, 5, 0",
+            "amount":      "50 Lakh",
+            "information": "In terms of landmass, India comes after Russia, Canada, China, USA, Brazil and Australia in that order."
+        },
+        {
+            "question":    "Which of the following is also known as 'White Coal'?",
+            "optionOne":   "Uranium",
+            "optionTwo":   "Hydro Electricity",
+            "optionThree": "Diamond",
+            "optionFour":  "Ice",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 15, 58, 15, 0",
+            "amount":      "1 Crore",
+            "information": "Hydroelectricity, is a form of energy that harnesses the power of water in motion—such as water flowing over a waterfall—to generate electricity, hence saving coal."
+        },
+        {
+            "question":    "PSLV stands for ?",
+            "optionOne":   "Polish Satellite Launch Vehicle",
+            "optionTwo":   "Polar Satellite Launch Vehicle",
+            "optionThree": "Perfect Satellite Launching Verifier",
+            "optionFour":  "Preparatory Satellite Launching Vehicle",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 60, 18, 15, 5",
+            "amount":      "3 Crore",
+            "information": "PSLV is a third generation rocket launcher designed by ISRO. It is an expendable launch vehicle which can place remote sensing satellites into sun synchronous orbit (SSO) and small sized spacecraft into geostationary transfer orbit."
+        },
+        {
+            "question":    "The first astronaut to walk in outer space is ?",
+            "optionOne":   "Aleksei Leonov",
+            "optionTwo":   "Yuri Gagarin",
+            "optionThree": "Neil Armstrong",
+            "optionFour":  "Dave Scott",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"15, 50, 10, 15, 10",
+            "amount":      "5 Crore",
+            "information": "Yuri Alekseyevich Gagarin was a Soviet Air Forces pilot and cosmonaut who became the first human to journey into outer space."
+        },
+        {
+            "question":    "Which country is known as the ‘Land of Thousand Lakes’ ?",
+            "optionOne":   "Norway",
+            "optionTwo":   "Canada",
+            "optionThree": "Ireland",
+            "optionFour":  "Finland",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"10, 15, 15, 50, 10",
+            "amount":      "7 Crore",
+            "information": "Egg white is the clear liquid (also called the albumen or the glair/glaire) contained within an egg."
+        }
+      ]
+    }

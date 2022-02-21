@@ -1,0 +1,94 @@
+.align-center {
+    text-align: center;
+}
+
+.text-style {
+    border: 2px solid; 
+    border-color: rgb(245, 181, 18); 
+    border-radius: 10px;
+    color: goldenrod;
+    font-size: larger;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+
+.blue-background {
+    background-color: #2A133D;
+}
+.card-style {
+    border: 2px solid;
+    border-color: goldenrod;
+    border-radius: 50px;
+}
+.left-sidebar{
+    position:absolute;
+    left:1%;
+    width: 20%;
+    overflow-wrap: break-word;
+}
+div#right-sidebar{
+    position:absolute;
+    right:1%;
+    width:20%;
+    overflow-wrap: break-word;
+}
+@media screen{
+    body>div#right-sidebar{
+        position:fixed;
+   }
+}
+* html body{
+    overflow:hidden;
+}
+* html div#content{
+    height:100%;
+    overflow:auto;
+}
+main {
+    max-width: 50%;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, .text-color-style {
+    color: goldenrod;
+}
+.raised-block {
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: -0.625rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+@media (max-width: 33.9em){
+    .raised-block {
+        margin-left: -0.625rem;
+   }
+}
+.row [class^="col-"]:first-child>.raised-block {
+    margin-left: -0.625rem;
+}
+.alert-highlight {
+    border: 3px dashed khaki;
+    border-radius: 15px;
+}
+.common {
+    width:100px;
+    height:200px;
+    border-color:green;
+    border-style:solid;
+    border-width: 1px;
+}
+#parent >div {
+    float:left;
+    clear:none;
+    margin-left:10px;
+}
+
+/* The container must be positioned relative: */
+.select-style {
+    position: relative;
+    border-radius: 5px;
+    border:1.5px solid goldenrod;
+    background-color: #2A133D;
+    color: white;
+  }
+  

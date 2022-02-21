@@ -8,6 +8,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { StartupComponent } from './startup/startup.component';
 import { UploadQuestionsComponent } from './upload-questions/upload-questions.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FastestFingerFirstComponent } from './game-components/fastest-finger-first/fastest-finger-first.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'startup', component: StartupComponent },
   { path: 'upload-questions', component: UploadQuestionsComponent },
   { path: 'page-not-found', component: PageNotFoundComponent },
-  {path: '**', redirectTo: '/page-not-found'}
+  { path: 'fastest-fingers-first', component: FastestFingerFirstComponent},
+  { path: '**', redirectTo: '/page-not-found'}
 ];
 
 @NgModule({
@@ -28,4 +30,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [GameComponent, AudiencePollComponent];
+export const routingComponents = [GameComponent, AudiencePollComponent, NavigationComponent, RulesComponent, AboutMeComponent,
+          StartupComponent, UploadQuestionsComponent, PageNotFoundComponent, FastestFingerFirstComponent];

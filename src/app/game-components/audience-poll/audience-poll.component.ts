@@ -8,9 +8,9 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AudiencePollComponent implements OnInit {
 private barchartDataArray: Array<number>;
-message:string;
+message: string;
 
-  constructor(private _data: DataService) {
+  constructor(private dataService: DataService) {
     this.barchartDataArray = [];
   }
 
@@ -23,10 +23,10 @@ message:string;
   public barChartLegend = true;
   public barChartData: any;
 
-  public chartOptions = { 
+  public chartOptions = {
     legend: {
         labels: {
-            fontColor: "goldenrod",
+            fontColor: 'goldenrod',
             fontSize: 36
         }
     },
@@ -34,23 +34,23 @@ message:string;
     scales: {
         yAxes: [{
             ticks: {
-                fontColor: "black",
+                fontColor: 'black',
                 fontSize: 18,
                 beginAtZero: true
             }
         }],
         xAxes: [{
           gridLines: {
-            color: "rgba(0, 0, 0, 0)"
+            color: 'rgba(0, 0, 0, 0)'
           },
             ticks: {
-                fontColor: "black",
+                fontColor: 'black',
                 fontSize: 14,
                 beginAtZero: true
             }
         }]
     }
-}
+};
 
 randomInteger(min: number, max: number) {
   console.log(this.message);
@@ -58,13 +58,13 @@ randomInteger(min: number, max: number) {
 }
 
   ngOnInit(): void {
-    this._data.currentMessage.subscribe(message => this.message = message);
+    this.dataService.currentMessage.subscribe(message => this.message = message);
     this.prepareChartArray();
     this.prepareChart();
   }
   prepareChartArray() {
-    if (this.message && this.message != 'default message') {
-      this.barchartDataArray = JSON.parse("[" + this.message + "]");
+    if (this.message && this.message !== 'default message') {
+      this.barchartDataArray = JSON.parse('[' + this.message + ']');
     }
     else {
       for (let index = 0; index < 5; index++) {
