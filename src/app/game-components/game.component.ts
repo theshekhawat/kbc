@@ -28,7 +28,7 @@ export class GameComponent implements OnInit {
   //#region public-properties
   public currentWinnings: string;
   public guaranteedWinnings: string;
-  public username: string  = ConstantsService.emptyString;
+  public username: string = ConstantsService.emptyString;
   public isNextQuestionAllowed = false;
   public hasOptionBeenLocked = false;
   public isGameReset = false;
@@ -49,11 +49,11 @@ export class GameComponent implements OnInit {
     private dataService: DataService,
     public utilitiesService: GameShowUtilitiesService,
     public timerComponent: TimerComponent
-    ) {
-    this.arrayIndex                 = 0;
-    this.username                   = ConstantsService.emptyString;
-    this.currentWinnings            = ConstantsService.zero;
-    this.guaranteedWinnings         = ConstantsService.zero;
+  ) {
+    this.arrayIndex = 0;
+    this.username = ConstantsService.emptyString;
+    this.currentWinnings = ConstantsService.zero;
+    this.guaranteedWinnings = ConstantsService.zero;
   }
 
   ngOnInit(): void {
@@ -131,60 +131,60 @@ export class GameComponent implements OnInit {
       this.utilitiesService.setOptions(false);
       this.isNextQuestionAllowed = false;
       this.timerComponent.pauseTheClock();
-      if (this.utilitiesService.lifelineDoubleChanceLocked ) {
+      if (this.utilitiesService.lifelineDoubleChanceLocked) {
         this.optionLocked(lockedAnswer);
       }
       else {
-        setTimeout(this.optionLocked , 4000, lockedAnswer);
+        setTimeout(this.optionLocked, 4000, lockedAnswer);
       }
     }
   }
 
-  optionLocked = async (lockedAnswer: number) =>  {
+  optionLocked = async (lockedAnswer: number) => {
     this.utilitiesService.setOptions(true);
     let correctAnswer: number;
     let choice: string;
     if (this.utilitiesService.lifelineFlipTheQuestionLocked && this.utilitiesService.isFlippedQuestionPresented) {
-         choice = this.flippedQuestionDetails.rightAnswer;
-      }
-      else {
-        // tslint:disable-next-line: no-string-literal
-        choice = this.questions['Questions'][this.arrayIndex - 1].rightAnswer;
-      }
+      choice = this.flippedQuestionDetails.rightAnswer;
+    }
+    else {
+      // tslint:disable-next-line: no-string-literal
+      choice = this.questions['Questions'][this.arrayIndex - 1].rightAnswer;
+    }
     correctAnswer = this.getsRightAnswer(choice);
 
     if (lockedAnswer === correctAnswer) {
-        if (this.isCollapsed) {
-          this.calculateWinnings();
-          this.isNextQuestionAllowed = true;
-        }
-        else {
-          this.isNextQuestionAllowed = false;
-          this.utilitiesService.isFlippedQuestionPresented = false;
-        }
-
-        this.utilitiesService.setOptions(false);
-        this.audioManagerService.playBackgroundSound(ConstantsService.correctAnswerAudioFilePath);
+      if (this.isCollapsed) {
+        this.calculateWinnings();
+        this.isNextQuestionAllowed = true;
       }
       else {
-        if (this.utilitiesService.isFirstGuessRight()) {
-          this.getsWrongOption(lockedAnswer);
-          return;
-        }
-
-        if (this.isCollapsed) {
-          this.calculateWinnings();
-          this.utilitiesService.setOptions(false);
-          this.currentWinnings = this.guaranteedWinnings;
-        }
-        else {
-          this.utilitiesService.isFlippedQuestionPresented = false;
-        }
         this.isNextQuestionAllowed = false;
-        this.getsWrongOption(lockedAnswer);
-        this.audioManagerService.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
+        this.utilitiesService.isFlippedQuestionPresented = false;
       }
-    this.informationElement.nativeElement.innerHTML     = this.questions[ConstantsService.Questions][this.arrayIndex - 1].information;
+
+      this.utilitiesService.setOptions(false);
+      this.audioManagerService.playBackgroundSound(ConstantsService.correctAnswerAudioFilePath);
+    }
+    else {
+      if (this.utilitiesService.isFirstGuessRight()) {
+        this.getsWrongOption(lockedAnswer);
+        return;
+      }
+
+      if (this.isCollapsed) {
+        this.calculateWinnings();
+        this.utilitiesService.setOptions(false);
+        this.currentWinnings = this.guaranteedWinnings;
+      }
+      else {
+        this.utilitiesService.isFlippedQuestionPresented = false;
+      }
+      this.isNextQuestionAllowed = false;
+      this.getsWrongOption(lockedAnswer);
+      this.audioManagerService.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
+    }
+    this.informationElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex - 1].information;
     this.stopTheTimer();
   }
 
@@ -198,11 +198,11 @@ export class GameComponent implements OnInit {
 
   public clockStatusFromTimerComponent(data: string) {
     this.quitTheGame();
-    this.questionElement.nativeElement.innerHTML    = ConstantsService.timeOver;
+    this.questionElement.nativeElement.innerHTML = ConstantsService.timeOver;
   }
 
   private startTheTimer() {
-    const deadline = new Date(Date.parse(new Date().toString()) + 4500 * 1000);
+    const deadline = new Date(Date.parse(new Date().toString()) + 60 * 1000);
     this.timerComponent.startTheClock(deadline);
   }
 
@@ -214,11 +214,11 @@ export class GameComponent implements OnInit {
     let correctAnswer: number;
     switch (choice) {
       case ConstantsService.caseOptionOne:
-        this.utilitiesService.rightAnswerOptionOne   = true;
+        this.utilitiesService.rightAnswerOptionOne = true;
         correctAnswer = 1;
         break;
       case ConstantsService.caseOptionTwo:
-        this.utilitiesService.rightAnswerOptionTwo   = true;
+        this.utilitiesService.rightAnswerOptionTwo = true;
         correctAnswer = 2;
         break;
       case ConstantsService.caseOptionThree:
@@ -226,7 +226,7 @@ export class GameComponent implements OnInit {
         correctAnswer = 3;
         break;
       case ConstantsService.caseOptionFour:
-        this.utilitiesService.rightAnswerOptionFour  = true;
+        this.utilitiesService.rightAnswerOptionFour = true;
         correctAnswer = 4;
         break;
     }
@@ -237,19 +237,19 @@ export class GameComponent implements OnInit {
     let lockedAnswer: number;
     switch (optionNumber) {
       case 1:
-        this.utilitiesService.isOptionOneLocked    = true;
+        this.utilitiesService.isOptionOneLocked = true;
         lockedAnswer = 1;
         break;
       case 2:
-        this.utilitiesService.isOptionTwoLocked    = true;
+        this.utilitiesService.isOptionTwoLocked = true;
         lockedAnswer = 2;
         break;
       case 3:
-        this.utilitiesService.isOptionThreeLocked  = true;
+        this.utilitiesService.isOptionThreeLocked = true;
         lockedAnswer = 3;
         break;
       case 4:
-        this.utilitiesService.isOptionFourLocked   = true;
+        this.utilitiesService.isOptionFourLocked = true;
         lockedAnswer = 4;
         break;
     }
@@ -259,16 +259,16 @@ export class GameComponent implements OnInit {
   private getsWrongOption(optionNumber: number) {
     switch (optionNumber) {
       case 1:
-        this.utilitiesService.wrongAnswerOptionOne    = true;
+        this.utilitiesService.wrongAnswerOptionOne = true;
         break;
       case 2:
-        this.utilitiesService.wrongAnswerOptionTwo    = true;
+        this.utilitiesService.wrongAnswerOptionTwo = true;
         break;
       case 3:
-        this.utilitiesService.wrongAnswerOptionThree  = true;
+        this.utilitiesService.wrongAnswerOptionThree = true;
         break;
       case 4:
-        this.utilitiesService.wrongAnswerOptionFour   = true;
+        this.utilitiesService.wrongAnswerOptionFour = true;
         break;
     }
   }
@@ -310,25 +310,25 @@ export class GameComponent implements OnInit {
       this.utilitiesService.imageSourceFiftyFifty = ConstantsService.fiftyFiftyDoneImageSourcePath;
       switch (this.questions[ConstantsService.Questions][this.arrayIndex - 1].rightAnswer) {
         case ConstantsService.caseOptionOne:
-          this.optionFourElement.nativeElement.innerHTML  = ConstantsService.exclamation;
+          this.optionFourElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.utilitiesService.isOptionFourEnabled = false;
           this.utilitiesService.isOptionThreeEnabled = false;
           break;
         case ConstantsService.caseOptionTwo:
-          this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
+          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.utilitiesService.isOptionOneEnabled = false;
           this.utilitiesService.isOptionThreeEnabled = false;
           break;
         case ConstantsService.caseOptionThree:
-          this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
-          this.optionTwoElement.nativeElement.innerHTML   = ConstantsService.exclamation;
+          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
+          this.optionTwoElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.utilitiesService.isOptionOneEnabled = false;
           this.utilitiesService.isOptionTwoEnabled = false;
           break;
         case ConstantsService.caseOptionFour:
-          this.optionOneElement.nativeElement.innerHTML   = ConstantsService.exclamation;
+          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
           this.utilitiesService.isOptionOneEnabled = false;
           this.utilitiesService.isOptionThreeEnabled = false;
@@ -352,7 +352,7 @@ export class GameComponent implements OnInit {
       this.timerComponent.pauseTheClock();
       this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
       this.utilitiesService.lifelineAskTheAudienceLocked = true;
-      this.utilitiesService.imageSourceAskTheAudience    = ConstantsService.askTheAudienceDoneImageSourcePath;
+      this.utilitiesService.imageSourceAskTheAudience = ConstantsService.askTheAudienceDoneImageSourcePath;
       const modalRef = this.modalService.open(AudiencePollComponent,
         {
           size: 'lg',
@@ -379,30 +379,30 @@ export class GameComponent implements OnInit {
       this.utilitiesService.lifelineFlipTheQuestionLocked = true;
       this.isCollapsed = false;
       this.quizInformationDetailsService.getsFlipQuestionsList().subscribe(
-          (data) => {
-            this.flippedQuestionDetails = data;
-            this.timerComponent.pauseTheClock();
-          },
-          (error) => (console.log(error))
-        );
+        (data) => {
+          this.flippedQuestionDetails = data;
+          this.timerComponent.pauseTheClock();
+        },
+        (error) => (console.log(error))
+      );
     }
   }
 
   private lifeLineExtraTime() {
-  if (!this.utilitiesService.lifelineExtraTimeLocked) {
-    this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-    this.utilitiesService.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
-    this.utilitiesService.lifelineExtraTimeLocked = true;
-    this.timerComponent.incrementTheClockBy(60);
+    if (!this.utilitiesService.lifelineExtraTimeLocked) {
+      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+      this.utilitiesService.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
+      this.utilitiesService.lifelineExtraTimeLocked = true;
+      this.timerComponent.incrementTheClockBy(60);
+    }
   }
-}
 
   private showAudiencePollPercentage() {
     const audiencePollDataArray = JSON.parse('[' + this.questions[ConstantsService.Questions][this.arrayIndex - 1].audiencePoll + ']');
-    this.utilitiesService.audiencePollOptionOnePercentage    = audiencePollDataArray[0] + ConstantsService.percentageSign;
-    this.utilitiesService.audiencePollOptionTwoPercentage    = audiencePollDataArray[1] + ConstantsService.percentageSign;
-    this.utilitiesService.audiencePollOptionThreePercentage  = audiencePollDataArray[2] + ConstantsService.percentageSign;
-    this.utilitiesService.audiencePollOptionFourPercentage   = audiencePollDataArray[3] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionOnePercentage = audiencePollDataArray[0] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionTwoPercentage = audiencePollDataArray[1] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionThreePercentage = audiencePollDataArray[2] + ConstantsService.percentageSign;
+    this.utilitiesService.audiencePollOptionFourPercentage = audiencePollDataArray[3] + ConstantsService.percentageSign;
   }
 
   private prepareWinningsDetails() {
@@ -413,38 +413,38 @@ export class GameComponent implements OnInit {
     this.utilitiesService.resetOptions();
     this.utilitiesService.setOptions(true);
     if (this.isCollapsed) {
-      this.utilitiesService.isFlippedQuestionPresented       = false;
+      this.utilitiesService.isFlippedQuestionPresented = false;
     }
     this.stopTheTimer();
   }
 
   private resetTheGame() {
-    this.questionElement.nativeElement.innerHTML    = ConstantsService.questionTextPlaceHolder;
-    this.optionOneElement.nativeElement.innerHTML   = ConstantsService.optionOneTextPlaceHolder;
-    this.optionTwoElement.nativeElement.innerHTML   = ConstantsService.optionTwoTextPlaceHolder;
+    this.questionElement.nativeElement.innerHTML = ConstantsService.questionTextPlaceHolder;
+    this.optionOneElement.nativeElement.innerHTML = ConstantsService.optionOneTextPlaceHolder;
+    this.optionTwoElement.nativeElement.innerHTML = ConstantsService.optionTwoTextPlaceHolder;
     this.optionThreeElement.nativeElement.innerHTML = ConstantsService.optionThreeTextPlaceHolder;
-    this.optionFourElement.nativeElement.innerHTML  = ConstantsService.optionFourTextPlaceHolder;
+    this.optionFourElement.nativeElement.innerHTML = ConstantsService.optionFourTextPlaceHolder;
     this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
-    this.arrayIndex                                 = 0;
-    this.utilitiesService.hasGameStarted                  = false;
-    this.username                                   = ConstantsService.emptyString;
-    this.flippedQuestionDetails                     = null;
-    this.isGameReset                                = true;
-    this.currentWinnings                            = ConstantsService.zero;
-    this.guaranteedWinnings                         = ConstantsService.zero;
-    this.isCollapsed                                = true;
-    this.utilitiesService.isFlippedQuestionPresented                 = true;
+    this.arrayIndex = 0;
+    this.utilitiesService.hasGameStarted = false;
+    this.username = ConstantsService.emptyString;
+    this.flippedQuestionDetails = null;
+    this.isGameReset = true;
+    this.currentWinnings = ConstantsService.zero;
+    this.guaranteedWinnings = ConstantsService.zero;
+    this.isCollapsed = true;
+    this.utilitiesService.isFlippedQuestionPresented = true;
     this.utilitiesService.setInitialPathForLifeLineImages();
     this.utilitiesService.setLifeLines(false);
   }
 
   private presentQuestion() {
-    this.questionElement.nativeElement.innerHTML        = this.questions[ConstantsService.Questions][this.arrayIndex].question;
-    this.optionOneElement.nativeElement.innerHTML       = this.questions[ConstantsService.Questions][this.arrayIndex].optionOne;
-    this.optionTwoElement.nativeElement.innerHTML       = this.questions[ConstantsService.Questions][this.arrayIndex].optionTwo;
-    this.optionThreeElement.nativeElement.innerHTML     = this.questions[ConstantsService.Questions][this.arrayIndex].optionThree;
-    this.optionFourElement.nativeElement.innerHTML      = this.questions[ConstantsService.Questions][this.arrayIndex].optionFour;
-    this.informationElement.nativeElement.innerHTML     = ConstantsService.informationAboutQuestion;
+    this.questionElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].question;
+    this.optionOneElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionOne;
+    this.optionTwoElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionTwo;
+    this.optionThreeElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionThree;
+    this.optionFourElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionFour;
+    this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this.isNextQuestionAllowed = true;
     this.hasOptionBeenLocked = false;
     this.arrayIndex++;
@@ -454,11 +454,11 @@ export class GameComponent implements OnInit {
   }
 
   private presentFlippedQuestion() {
-    this.questionElement.nativeElement.innerHTML    = this.flippedQuestionDetails.question;
-    this.optionOneElement.nativeElement.innerHTML   = this.flippedQuestionDetails.optionOne;
-    this.optionTwoElement.nativeElement.innerHTML   = this.flippedQuestionDetails.optionTwo;
+    this.questionElement.nativeElement.innerHTML = this.flippedQuestionDetails.question;
+    this.optionOneElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionOne;
+    this.optionTwoElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionTwo;
     this.optionThreeElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionThree;
-    this.optionFourElement.nativeElement.innerHTML  = this.flippedQuestionDetails.optionFour;
+    this.optionFourElement.nativeElement.innerHTML = this.flippedQuestionDetails.optionFour;
     this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this.dataService.changeMessage(this.flippedQuestionDetails.audiencePoll);
     this.utilitiesService.isFlippedQuestionPresented = true;
@@ -469,15 +469,15 @@ export class GameComponent implements OnInit {
   private playQuestionsBackgroundSound() {
     let soundToPlay: string;
     if (this.utilitiesService.parseNumber(this.currentWinnings) <
-    this.utilitiesService.parseNumber(ConstantsService.firstMilestoneAmount)) {
+      this.utilitiesService.parseNumber(ConstantsService.firstMilestoneAmount)) {
       soundToPlay = ConstantsService.easyQuestionsAudioFilePath;
     }
     else if (this.utilitiesService.parseNumber(this.currentWinnings) <
-    this.utilitiesService.parseNumber(ConstantsService.secondMilestoneAmount)) {
+      this.utilitiesService.parseNumber(ConstantsService.secondMilestoneAmount)) {
       soundToPlay = ConstantsService.mediumQuestionsAudioFilePath;
     }
     else if (this.utilitiesService.parseNumber(this.currentWinnings) <
-    this.utilitiesService.parseNumber(ConstantsService.thirdMilestoneAmount)) {
+      this.utilitiesService.parseNumber(ConstantsService.thirdMilestoneAmount)) {
       soundToPlay = ConstantsService.hardQuestionsAudioFilePath;
     }
     this.audioManagerService.stopIfAudioIsPlaying();
