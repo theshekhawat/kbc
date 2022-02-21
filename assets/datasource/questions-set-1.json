@@ -1,0 +1,169 @@
+{
+    "Questions": [
+        {
+          "question":       "Narayan Kartikeyan is the sportsman in the field of ?",
+          "optionOne":      "Chess",
+          "optionTwo":      "Shooting",
+          "optionThree":    "Golf",
+          "optionFour":     "Formula-one Car Racing",
+          "rightAnswer":    "optionFour",
+          "audiencePoll":   "5, 10, 5, 80, 0",
+          "amount":         "5,000",
+          "information":    "Narain Karthikeyan (born 14 January 1977) is a racing driver who was the first Formula One driver from India. He has previously competed in A1GP, and the Le Mans Series."
+        },
+        {
+            "question":    "Which of the following awards is not associated with the field of sports ?",
+            "optionOne":   "Arjuna Award",
+            "optionTwo":   "Dronacharya Award",
+            "optionThree": "Gyaanpeeth Award",
+            "optionFour":  "Dhyan Chand Award",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"20, 5, 65, 15, 0",
+            "amount":      "10,000",
+            "information": "Gyanpeeth Award is an Indian literary award presented annually by the Bharatiya Jnanpith to an author for their \"outstanding contribution towards literature\"."
+        },
+        {
+            "question":    "What is the name given to an animal that only eats plants ?",
+            "optionOne":   "Amphibian",
+            "optionTwo":   "Omnivore",
+            "optionThree": "Carnivore",
+            "optionFour":  "Herbivore",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"15, 5, 15, 65, 0",
+            "amount":      "20,000",
+            "information": "Herbivores are animals that eat only plants. Carnivores are animals that eat only meat. Omnivores are animals that eat both plants and meat."
+        },
+        {
+            "question":    "Which artist painted the Mona Lisa ?",
+            "optionOne":   "Michelangelo",
+            "optionTwo":   "Leonardo da Vinci",
+            "optionThree": "Raphael",
+            "optionFour":  "Donatello",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 90, 3, 2, 0",
+            "amount":      "40,000",
+            "information": "Mona Lisa, also called Portrait of Lisa Gherardini, wife of Francesco del Giocondo, oil painting on a poplar wood panel by Leonardo da Vinci, probably the world's most famous painting."
+        },
+        {
+            "question":    "What instrument does a doctor use to learn about heart beats ?",
+            "optionOne":   "Suction device",
+            "optionTwo":   "Stethoscope",
+            "optionThree": "Spetula",
+            "optionFour":  "Thermometer",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 65, 15, 18, 0",
+            "amount":      "80,000",
+            "information": "Using a stethoscope, your doctor can listen to your lungs for signs of congestion. The stethoscope also picks up abnormal heart sounds that may suggest heart failure."
+        },
+        {
+            "question":    "What is the first letter of the Greek alphabet ?",
+            "optionOne":   "Beta",
+            "optionTwo":   "Delta",
+            "optionThree": "Gamma",
+            "optionFour":  "Alpha",
+            "rightAnswer": "optionFour",
+            "audiencePoll":"8, 5, 25, 62, 0",
+            "amount":      "1,60,000",
+            "information": "The word \"alphabet\" comes from the first two letters of the Greek alphabet \"alpha\" and \"beta\"."
+        },
+        {
+            "question":    "What Is The Full Version Of NASA ?",
+            "optionOne":   "National Aeronautics and Space Administration",
+            "optionTwo":   "National Aero and Space Administration",
+            "optionThree": "National Air and Subsidiary Administration",
+            "optionFour":  "Norman Anti Space Administration",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"78, 12, 5, 5, 0",
+            "amount":      "3,20,000",
+            "information": "NASA was started on October 1, 1958, as a part of the United States government."
+        },
+        {
+            "question":    "How many heart/s does an octopus have ?",
+            "optionOne":   "1",
+            "optionTwo":   "3",
+            "optionThree": "2",
+            "optionFour":  "This is a trick question.",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"8, 42, 15, 15, 20",
+            "amount":      "6,40,000",
+            "information": "An octopus has three hearts, nine brains, and blue blood. Two hearts pump blood to the gills, while a third circulates it to the rest of the body."
+        },
+        {
+            "question":    "What is the national motto of India ?",
+            "optionOne":   "Satyamev Jayate",
+            "optionTwo":   "Hum ek hain!",
+            "optionThree": "Vande Mataram",
+            "optionFour":  "Sare jahan se achcha",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"80, 8, 8, 2, 2",
+            "amount":      "12,50,000",
+            "information": "Satyamev Jayate is a part of a mantra from the Hindu scripture Mundaka Upanishad."
+        },
+        {
+            "question":    "Richter Scale is used to measure ?",
+            "optionOne":   "Ocean Depth",
+            "optionTwo":   "Earthquake",
+            "optionThree": "Rainfall",
+            "optionFour":  "Sound Intensity",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"2, 88, 6, 1, 3",
+            "amount":      "25 Lakh",
+            "information": "The Richter magnitude scale is a scale of numbers used to tell the power (or magnitude) of earthquakes. Charles Richter developed the Richter Scale in 1935."
+        },
+        {
+            "question":    "The blue colour of the clear sky is due to ?",
+            "optionOne":   "Diffraction of light",
+            "optionTwo":   "Reflection of light",
+            "optionThree": "Dispersion of light",
+            "optionFour":  " Refraction of light",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"12, 5, 78, 5, 0",
+            "amount":      "50 Lakh",
+            "information": "A clear cloudless day-time sky is blue because molecules in the air dissipate blue light from the sun more than they dissipate red light."
+        },
+        {
+            "question":    "What is three dimensional image called ?",
+            "optionOne":   "Teserract",
+            "optionTwo":   "Hologram",
+            "optionThree": "Simple Image",
+            "optionFour":  "3D-Imaging",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"12, 15, 58, 15, 0",
+            "amount":      "1 Crore",
+            "information": "In computers, 3-D (three dimensions or three-dimensional) describes an image that provides the perception of depth."
+        },
+        {
+            "question":    "What is an 11 sided shape called ?",
+            "optionOne":   "Decagon",
+            "optionTwo":   "Hendecagon",
+            "optionThree": "Dodecagon",
+            "optionFour":  "Deshagon",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"5, 60, 18, 15, 5",
+            "amount":      "3 Crore",
+            "information": " In geometry, a hendecagon (also undecagon or endecagon) or 11-gon is an eleven-sided polygon."
+        },
+        {
+            "question":    "who wrote vande mataram ?",
+            "optionOne":   "Bankim Chandra Chatterjee",
+            "optionTwo":   "Rabindra Nath Tagore",
+            "optionThree": "Iqbal",
+            "optionFour":  "Sulakshna Devi",
+            "rightAnswer": "optionOne",
+            "audiencePoll":"50, 15, 10, 15, 10",
+            "amount":      "5 Crore",
+            "information": "Vande Mataram is a Sanskrit poem written by Bankim Chandra Chatterjee in 1870s, which he included in his 1882 Bengali novel Anandamath."
+        },
+        {
+            "question":    "What’s the white bit in the middle of the egg called ?",
+            "optionOne":   "White Egg",
+            "optionTwo":   "Yolk",
+            "optionThree": "Albumen",
+            "optionFour":  "chalazae",
+            "rightAnswer": "optionThree",
+            "audiencePoll":"10, 15, 50, 15, 10",
+            "amount":      "7 Crore",
+            "information": "Egg white is the clear liquid (also called the albumen or the glair/glaire) contained within an egg."
+        }
+      ]
+    }

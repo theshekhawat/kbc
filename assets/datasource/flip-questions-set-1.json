@@ -1,0 +1,10 @@
+{
+    "question":     "India lies in which hemisphere ?",
+    "optionOne":    "Southern and eastern",
+    "optionTwo":    "Northern and western",
+    "optionThree":  "Northern and eastern",
+    "optionFour":   "Southern and western",
+    "rightAnswer":  "optionThree",
+    "audiencePoll": "2, 5, 88, 5, 0",
+    "information": "India is located latitudinally in the Northern Hemisphere and longitudinally in the Eastern Hemisphere."
+}
