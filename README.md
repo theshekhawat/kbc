@@ -27,7 +27,7 @@ To help a player along, there are 6 lifelines in total which are listed as below
 
 ### Installation
 
-This project is implemented using Angular Cli version [9.1.7] and [Node.js](https://nodejs.org/) version 12.16.3.
+This project is implemented using Angular Cli version [13.2.4] and [Node.js](https://nodejs.org/) version 12.16.3.
 
 Install the dependencies and devDependencies and start the server.
 
