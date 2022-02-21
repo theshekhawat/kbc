@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --o --port 5302",
-    "build:github": "ng build --prod --base-href \"https://theshekhawat.github.io/kbc/\"",
+    "build:github": "ng build --configuration production --base-href \"https://theshekhawat.github.io/kbc/\"",
     "deploy:github": "angular-cli-ghpages -d dist/game-show/ --no-silent",
     "build:deploy:github": "npm run build:github && npm run deploy:github",
-    "build": "ng build --prod",
+    "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -44,8 +44,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1002.4",
-    "@angular/cli": "~11.2.18",
+    "@angular-devkit/build-angular": "~12.2.16",
+    "@angular/cli": "~12.2.16",
     "@angular/compiler-cli": "~12.2.16",
     "@angular/language-service": "~12.2.16",
     "@types/jasmine": "~3.6.0",
