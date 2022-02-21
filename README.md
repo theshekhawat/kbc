@@ -46,11 +46,11 @@ $ npm run start
 
 ### Todos
 
+ - Fastest Fingers First
  - Integrate with database
  - Login
  - Register
  - Winner celebration pages
- - Rules and regulations page
  
 ### Screenshot
 
