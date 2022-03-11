@@ -28,7 +28,7 @@ export class ConstantsService {
   public static readonly mediumQuestionsAudioFilePath: string         = './assets/sounds/medium.mp3';
   public static readonly hardQuestionsAudioFilePath: string           = './assets/sounds/hard.mp3';
   public static readonly flipQuestionsSetJsonFilePath: string         = './assets/datasource/flip-questions-set-1.json';
-  public static readonly questionsSetJsonFilePath: string             = './assets/datasource/questions-set-1.json';
+  public static readonly questionsSetJsonFilePath: string             = './assets/datasource/questions-set-11.json';
   public static readonly questionTextPlaceHolder: string              = 'Question';
   public static readonly optionOneTextPlaceHolder: string             = 'Option 1';
   public static readonly optionTwoTextPlaceHolder: string             = 'Option 2';

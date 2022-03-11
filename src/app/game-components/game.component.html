@@ -183,9 +183,9 @@
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(utilitiesService.isOptionOneLocked == true), 
                     'green-background': utilitiesService.rightAnswerOptionOne == true, 'red-background': utilitiesService.wrongAnswerOptionOne == true }">
-                    <h4 #optionOnePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionOne === true"
+                    <h5 #optionOnePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionOne === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(1, utilitiesService.isOptionOneEnabled)">Option 1
-                    </h4>
+                    </h5>
                 </div>
                 <div *ngIf="utilitiesService.audiencePollOptionOnePercentage" class="col-sm-2 text-white audience-poll keep-right">
                     <h4 class="text-white">{{utilitiesService.audiencePollOptionOnePercentage}}</h4>
@@ -195,9 +195,9 @@
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(utilitiesService.isOptionTwoLocked == true), 
                     'green-background': utilitiesService.rightAnswerOptionTwo == true, 'red-background': utilitiesService.wrongAnswerOptionTwo == true }">
-                    <h4 #optionTwoPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionTwo === true"
+                    <h5 #optionTwoPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionTwo === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(2, utilitiesService.isOptionTwoEnabled)">Option 2
-                    </h4>
+                    </h5>
                 </div>
                 <div *ngIf="utilitiesService.audiencePollOptionTwoPercentage" class="col-sm-2 text-white audience-poll keep-right">
                     <h4 class="text-white">{{utilitiesService.audiencePollOptionTwoPercentage}}</h4>
@@ -209,9 +209,9 @@
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(utilitiesService.isOptionThreeLocked == true), 
                     'green-background': utilitiesService.rightAnswerOptionThree == true, 'red-background': utilitiesService.wrongAnswerOptionThree == true }">
-                    <h4 #optionThreePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionThree === true"
+                    <h5 #optionThreePlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionThree === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(3, utilitiesService.isOptionThreeEnabled)">Option 3
-                    </h4>
+                    </h5>
                 </div>
                 <div *ngIf="utilitiesService.audiencePollOptionThreePercentage" class="col-sm-2 text-white audience-poll keep-right">
                     <h4 class="text-white">{{utilitiesService.audiencePollOptionThreePercentage}}</h4>
@@ -221,9 +221,9 @@
                 <div class="card-style blue-background"
                     [ngClass]="{'yellow-background':(utilitiesService.isOptionFourLocked == true), 
                     'green-background': utilitiesService.rightAnswerOptionFour == true, 'red-background': utilitiesService.wrongAnswerOptionFour == true }">
-                    <h4 #optionFourPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionFour === true"
+                    <h5 #optionFourPlaceHolder [class.rightAnswer-background]="utilitiesService.rightAnswerOptionFour === true"
                         class="alert align-center image-cursor" (click)="lockOptionAndWait(4, utilitiesService.isOptionFourEnabled)">Option 4
-                    </h4>
+                    </h5>
                 </div>
                 <div *ngIf="utilitiesService.audiencePollOptionFourPercentage" class="col-sm-2 text-white audience-poll keep-right">
                     <h4 class="text-white">{{utilitiesService.audiencePollOptionFourPercentage}}</h4>

@@ -202,7 +202,7 @@ export class GameComponent implements OnInit {
   }
 
   private startTheTimer() {
-    const deadline = new Date(Date.parse(new Date().toString()) + 60 * 1000);
+    const deadline = new Date(Date.parse(new Date().toString()) + 600 * 1000);
     this.timerComponent.startTheClock(deadline);
   }
 
@@ -439,11 +439,11 @@ export class GameComponent implements OnInit {
   }
 
   private presentQuestion() {
-    this.questionElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].question;
-    this.optionOneElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionOne;
-    this.optionTwoElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionTwo;
-    this.optionThreeElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionThree;
-    this.optionFourElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions][this.arrayIndex].optionFour;
+    this.questionElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions ?? 'Questions'][this.arrayIndex].question;
+    this.optionOneElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions ?? 'Questions'][this.arrayIndex].optionOne;
+    this.optionTwoElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions ?? 'Questions'][this.arrayIndex].optionTwo;
+    this.optionThreeElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions ?? 'Questions'][this.arrayIndex].optionThree;
+    this.optionFourElement.nativeElement.innerHTML = this.questions[ConstantsService.Questions ?? 'Questions'][this.arrayIndex].optionFour;
     this.informationElement.nativeElement.innerHTML = ConstantsService.informationAboutQuestion;
     this.isNextQuestionAllowed = true;
     this.hasOptionBeenLocked = false;
