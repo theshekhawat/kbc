@@ -1,170 +1,169 @@
 {
-    "Questions": [
-        {
-          "question":       "पंडित को क्या अधिक प्रिय है ?",
-          "optionOne":      "भूरी झांट वाला गांड का छेद",
-          "optionTwo":      "काली गांड",
-          "optionThree":    "मैडम का खड़ा लन्ड",
-          "optionFour":     "बालों वाली निप्पल",
-          "rightAnswer":    "optionOne",
-          "audiencePoll":   "80, 10, 5, 5, 0",
-          "amount":         "5,000",
-          "information":    "पंडित बाल्यावस्था से ही गांड की छेदों में जानकारी पाने का इच्छुक रहा है"
-        },
-        {
-            "question":    "पंडित का प्रिय शुकवाक्य अर्थात तकिया-कलाम अथवा अंग्रेजी में जिसे catchphrase कहते हैं वो क्या है ?",
-            "optionOne":   "अपन सहन नहीं करते भेन-चोद",
-            "optionTwo":   "लन्ड ले लो भोसड़ी वाले",
-            "optionThree": "मैया की चूत इसकी, भाड़ में जाए",
-            "optionFour":  "किसी दिन लौड़े पे बिठा के पेल देंगे",
-            "rightAnswer": "optionThree",
-            "audiencePoll":"20, 5, 65, 15, 0",
-            "amount":      "10,000",
-            "information": "\"मैय्या की चूत\" जैसे पवित्र शब्दों का उच्चारण को जिस लय एवं ताल की परम आवश्यकता है उसके लिए संपर्क करें पंडित क्लासेज मे। शुल्क में आपसे केवल आपकी गांड ली जायेगी।"
-        },
-        {
-            "question":    "एपीकोर में अपने साढ़े ३ वर्षों में कार्यकाल के पश्चात पंडित को स्वयं की किस घटना से अत्यधिक लगाव रहा होगा ?",
-            "optionOne":   "कुक्कुटपल्ली की गांड मारते हुए पकडे जाने से",
-            "optionTwo":   "टोनी स्टार्क को चौधरी की गांड ज़बान से साफ़ करते हुए देख लेने से",
-            "optionThree": "मैडम को गांड में खुजली करने के बाद हाथ सूंघते हुए देखने से",
-            "optionFour":  "अरे ये क्या है यार बाबा",
-            "rightAnswer": "optionOne",
-            "audiencePoll":"65, 5, 15, 5, 0",
-            "amount":      "20,000",
-            "information": "उफ्फ! मुझे स्वयं शर्म आ गयी भाई ये वाले ऑप्शंस लिखते वक़्त! अब तो साला घिनौनेपन की सारी सीमाएं लांघ दी!"
-        },
-        {
-            "question":    "कार्यालय आने के पश्चात वो कौनसी बात/चीज़ है जो पंडित सबसे पहले करता था ?",
-            "optionOne":   "अपनी चड्डी एडजस्ट करता था",
-            "optionTwo":   "मनोज के पास खड़ा हो के अपना लन्ड नापता था",
-            "optionThree": "कुर्र कुर्र की आवाज़ सुनने के लिए बेचैन होता था",
-            "optionFour":  "माल ताड़ता था",
-            "rightAnswer": "optionTwo",
-            "audiencePoll":"5, 90, 3, 2, 0",
-            "amount":      "40,000",
-            "information": "ज्ञान की बात: लन्ड नापने की इस विधि में सदा ही पंडित का लन्ड मनोज की लम्बाई से २ सेंटीमीटर लम्बा होता था!"
-        },
-        {
-            "question":    "पंडित के अनुसार \"दर हरामी\" शब्द को कौन चरितार्थ करता है ?",
-            "optionOne":   "आनंद",
-            "optionTwo":   "बंसल और सुमित",
-            "optionThree": "मिलन और पोगो का मिश्रण",
-            "optionFour":  "तिलक",
-            "rightAnswer": "optionTwo",
-            "audiencePoll":"12, 65, 15, 18, 0",
-            "amount":      "80,000",
-            "information": "चारों विकल्प अपने स्थान पर दर हरामी हैं किन्तु बंसल और सुमित पंडित को अत्यधिक प्रिय है!"
-        },
-        {
-            "question":    "इन चार विकल्पों में से आप क्या चुनेंगे ?",
-            "optionOne":   "सचिन छक्के की गांड",
-            "optionTwo":   "रुबिनी ओमकुमार के साथ सम्भोग",
-            "optionThree": "कुक्कुटपल्ली के साथ चुम्बन",
-            "optionFour":  "बाबा अब तो मैं आपको जान से मार दूंगा",
-            "rightAnswer": "optionFour",
-            "audiencePoll":"8, 5, 25, 62, 0",
-            "amount":      "1,60,000",
-            "information": "ये सब लिखने के बाद भाई मैं खुद को जान से मार देने के मूड में हूँ!"
-        },
-        {
-            "question":    "कार्यालय से निकलने के बाद पंडित क्या करता है ?",
-            "optionOne":   "ब्यूटी पार्लर में लड़कियों की झांट की वैक्सिंग",
-            "optionTwo":   "कच्छे और जांघिया बेचने का धंधा",
-            "optionThree": "सुलभ शौचालय के बाहर बैठने का धंधा",
-            "optionFour":  "मैजेस्टिक जा के छक्कों से सम्बन्ध बनाता है",
-            "rightAnswer": "optionOne",
-            "audiencePoll":"78, 12, 5, 5, 0",
-            "amount":      "3,20,000",
-            "information": "इस महंगाई के ज़माने में कोई शरीफ ठरकी आदमी करे तो भी और क्या करेगा! कोई ओपनिंग हो वहां तो बताना भाई पंडित!"
-        },
-        {
-            "question":    "यदि पंडित को मैडम का लौड़ा नापने के लिए कहा जाए तो वो क्या करेगा ?",
-            "optionOne":   "आत्महत्या",
-            "optionTwo":   "रेसलर से उसके मुँह की गहराई पूछेगा",
-            "optionThree": "मैडम की डेस्क के छेद में स्केल डाल के नापेगा",
-            "optionFour":  "मैय्या की चूत बाबा क्या है ये",
-            "rightAnswer": "optionOne",
-            "audiencePoll":"42, 8, 15, 15, 20",
-            "amount":      "6,40,000",
-            "information": "पिता पर पूत, जात में घोडा, नहीं देखा जाएगा मैडम जैसा लौड़ा"
-        },
-        {
-            "question":    "कुर्र कुर्र की ध्वनि का असली कारण क्या रहा होगा ?",
-            "optionOne":   "झांटों में फंसा मैल",
-            "optionTwo":   "झांट और नाखून के मध्य घर्षण",
-            "optionThree": "खुजली के साथ गीले पाद की ध्वनि",
-            "optionFour":  "ये केवल पंडित की परिकल्पना",
-            "rightAnswer": "optionTwo",
-            "audiencePoll":"8, 80, 8, 2, 2",
-            "amount":      "12,50,000",
-            "information": "कई दिनों तक स्नान ना करने से झांटों में मैल उत्पन्न हो जाता है जिसके कारण झांटें अपना नैसर्गिक काला रंग त्याग कर भूरे रंग में परिवर्तित हो जाती हैं एवं नाखूनों के संपर्क में आकर कुर्र कुर्र की ध्वनि उत्पन्न करती हैं!"
-        },
-        {
-            "question":    "क्यों पंडित ने घर पे माइक्रोस्कोप रखा है ?",
-            "optionOne":   "कोई कारण नहीं! मेरी मर्ज़ी",
-            "optionTwo":   "कुक्कुटपल्ली का चुम्मा लेते वक़्त उसकी ज़बान पे लगी झांट ढूंढें के लिए",
-            "optionThree": "मुठ मारने की इच्छा होने पर लन्ड ढूंढने के लिए",
-            "optionFour":  "कोई मुझे मार ही दो जान से",
-            "rightAnswer": "optionThree",
-            "audiencePoll":"2, 6, 88, 1, 3",
-            "amount":      "25 Lakh",
-            "information": "इसका कोई विश्लेषण नहीं है , बस मज़े लो"
-        },
-        {
-            "question":    "पंडित के पाइथन से क्या तात्पर्य है ?",
-            "optionOne":   "चूत का पुल्लिंग समकक्ष",
-            "optionTwo":   "सॉफ्टवेयर निष्पादन में सहायक विधि",
-            "optionThree": "लन्ड, लौड़ा, लिंग - रूप एक, नाम अनेक",
-            "optionFour":  "सभी तीनों",
-            "rightAnswer": "optionFour",
-            "audiencePoll":"12, 5, 5, 78, 0",
-            "amount":      "50 Lakh",
-            "information": "अनेकता में एकता लौड़े की विशेषता। रंग अनेक मुट्ठी एक!"
-        },
-        {
-            "question":    "'Kuchipudi' is a classical dance from the state ?",
-            "optionOne":   "Tamil Nadu",
-            "optionTwo":   "Andhra Pradesh",
-            "optionThree": "Odisha",
-            "optionFour":  "Kerala",
-            "rightAnswer": "optionTwo",
-            "audiencePoll":"12, 15, 58, 15, 0",
-            "amount":      "1 Crore",
-            "information": "Kuchipudi is considered one of the toughest forms of Indian classical dance that originated in the south Indian state of Andhra Pradesh."
-        },
-        {
-            "question":    "Indian Military Academy is located in which city ?",
-            "optionOne":   "Shimla",
-            "optionTwo":   "Lucknow",
-            "optionThree": "Mussoorie",
-            "optionFour":  "Dehradun",
-            "rightAnswer": "optionFour",
-            "audiencePoll":"5, 60, 18, 15, 5",
-            "amount":      "3 Crore",
-            "information": "The Indian Military Academy (IMA) is an officer-training academy of the Indian Army in Dehradun, Uttarakhand."
-        },
-        {
-            "question":    "Which one is the religious tallest minar in India ?",
-            "optionOne":   "Fateh Burj",
-            "optionTwo":   "Qutub Minar",
-            "optionThree": "Chand Minar",
-            "optionFour":  "Shaheed Minar",
-            "rightAnswer": "optionOne",
-            "audiencePoll":"50, 15, 10, 15, 10",
-            "amount":      "5 Crore",
-            "information": "The Fateh Burj (English: The Victory Tower) is the tallest religious minar in India situated in the historical village of Chappar Chiri in the SAS Nagar district, Punjab. It was completed in 2011."
-        },
-        {
-            "question":    "With how many countries India share its land borders ?",
-            "optionOne":   "5",
-            "optionTwo":   "6",
-            "optionThree": "7",
-            "optionFour":  "8",
-            "rightAnswer": "optionTwo",
-            "audiencePoll":"5, 90, 3, 2, 0",
-            "amount":      "7 Crore",
-            "information": "Inventor Ralph Baer, The 'Father Of Video Games,' Dies At 92. German-American game developer Ralph Baer shows the prototype of the first games console which was invented by him during a press conference on the Games Convention Online in Leipzig, Germany in 2009."
-
-        }
-      ]
+"Questions": [
+    {
+      "question":       "Who is the winner of India's first noble prize ?",
+      "optionOne":      "C. V. Raman",
+      "optionTwo":      "Kailash Satyarthi",
+      "optionThree":    "Amartya Sen",
+      "optionFour":     "Rabindra Nath Tagore",
+      "rightAnswer":    "optionFour",
+      "audiencePoll":   "5, 10, 5, 80, 0",
+      "amount":         "5,000",
+      "information":    "Poet Rabindranath Tagore won the Nobel Prize for Literature in 1913 for his collection Gitanjali published in London in 1912."
+    },
+    {
+        "question":    "Who was India's first astronaut ?",
+        "optionOne":   "Sunita Williams",
+        "optionTwo":   "Ritesh Gupta",
+        "optionThree": "Rakesh Sharma",
+        "optionFour":  "India has no astronauts",
+        "rightAnswer": "optionThree",
+        "audiencePoll":"20, 5, 65, 15, 0",
+        "amount":      "10,000",
+        "information": "On April 2, 1984, IAF pilot Rakesh Sharma became the first Indian to travel to space. When the then PM Indira Gandhi asked, \"How does India look from space ?\" Sharma said, \"Sare Jahan Se Achcha!\""
+    },
+    {
+        "question":    "Who Invented The Very First Aeroplane ?",
+        "optionOne":   "Riggler & Brothers",
+        "optionTwo":   "Andrew Garfield",
+        "optionThree": "Winklevoss Brothers",
+        "optionFour":  "Wright Brothers",
+        "rightAnswer": "optionFour",
+        "audiencePoll":"15, 5, 15, 65, 0",
+        "amount":      "20,000",
+        "information": "Near North Carolina, Orville and Wilbur Wright make the first successful flight in history. The aircraft stayed aloft for 12 seconds and covered 120 feet on its inaugural flight."
+    },
+    {
+        "question":    "Who Was The First Home Minister Of Free India ?",
+        "optionOne":   "Jawahar Lal Nehru",
+        "optionTwo":   "Sardar Vallabh Bhai Patel",
+        "optionThree": "Babu Jagjeevan Ram",
+        "optionFour":  "Lal Bahadur Shastri",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"5, 90, 3, 2, 0",
+        "amount":      "40,000",
+        "information": "In addition to being the home minister, Sardar Patel was instrumental in bringing all the princely States under the ambit of India. Also known as Iron Man of India."
+    },
+    {
+        "question":    "How Many Years Did It Take To Build The Taj Mahal ?",
+        "optionOne":   "23",
+        "optionTwo":   "22",
+        "optionThree": "24",
+        "optionFour":  "29",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"12, 65, 15, 18, 0",
+        "amount":      "80,000",
+        "information": "With construction beginning around 1632 and finishing in 1653, the Taj Mahal took an estimated 22 years to build."
+    },
+    {
+        "question":    "Which Planet Is Known To Have The Largest Number Of Moons ?",
+        "optionOne":   "Venus",
+        "optionTwo":   "Mars",
+        "optionThree": "Jupiter",
+        "optionFour":  "Saturn",
+        "rightAnswer": "optionFour",
+        "audiencePoll":"8, 5, 25, 62, 0",
+        "amount":      "1,60,000",
+        "information": "Saturn has overtaken Jupiter. A team discovered a haul of 20 new moons orbiting the ringed planet, bringing its total to 82; Jupiter, by contrast, has 79 natural satellites."
+    },
+    {
+        "question":    "What Is The Full Version Of ISRO ?",
+        "optionOne":   "Indian Space Research Organisation",
+        "optionTwo":   "Indian Space Reform Organisation",
+        "optionThree": "Indian Sub Reformative Organisation",
+        "optionFour":  "International Space Research Organisation",
+        "rightAnswer": "optionOne",
+        "audiencePoll":"78, 12, 5, 5, 0",
+        "amount":      "3,20,000",
+        "information": "Indian Space Research Organisation, formed in 1969, superseded the erstwhile INCOSPAR (Indian National Committee for Space Research)."
+    },
+    {
+        "question":    "Which Language Is Spoken Popularly In Brazil ?",
+        "optionOne":   "Brazilian",
+        "optionTwo":   "Portuguese",
+        "optionThree": "Danish",
+        "optionFour":  "French",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"8, 42, 15, 15, 20",
+        "amount":      "6,40,000",
+        "information": "Brazil accounts for a large portion of both South America’s geography and Portuguese is the official and national language of Brazil."
+    },
+    {
+        "question":    "Which country is known as the largest producer of gold ?",
+        "optionOne":   "China",
+        "optionTwo":   "Brazil",
+        "optionThree": "South Africa",
+        "optionFour":  "India",
+        "rightAnswer": "optionOne",
+        "audiencePoll":"80, 8, 8, 2, 2",
+        "amount":      "12,50,000",
+        "information": "China is the largest producer of gold in the world and is accounted for around 12 per cent of total global production."
+    },
+    {
+        "question":    "Which is the smallest continent in the world ?",
+        "optionOne":   "Asia",
+        "optionTwo":   "Australia",
+        "optionThree": "Antarctica",
+        "optionFour":  "Europe",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"2, 88, 6, 1, 3",
+        "amount":      "25 Lakh",
+        "information": "There are seven continents in the world and Asia is the largest, and according to land-mass, Australia is the smallest at almost a fifth of the size of Asia."
+    },
+    {
+        "question":    "Which is the largest ocean in the world ?",
+        "optionOne":   "Atlantic Ocean",
+        "optionTwo":   "Indian Ocean",
+        "optionThree": "Pacific Ocean",
+        "optionFour":  "Arctic Ocean",
+        "rightAnswer": "optionThree",
+        "audiencePoll":"12, 5, 78, 5, 0",
+        "amount":      "50 Lakh",
+        "information": "Also the deepest of the world ocean basins, Pacific Ocean covers approx.63 million square miles and containing more than half of the free water on Earth. All the continents could fit into it."
+    },
+    {
+        "question":    "What is called as the World’s Tallest Grass ?",
+        "optionOne":   "Wild Grass",
+        "optionTwo":   "Bamboo",
+        "optionThree": "Lawn Grass",
+        "optionFour":  "Silver Grass",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"12, 15, 58, 15, 0",
+        "amount":      "1 Crore",
+        "information": "The Dragon bamboo also known as Giant Bamboo is the tallest known Grass in the world. In Favorable Condition, it can grow maximum up to 40-45 m height- average height 20-25 m."
+    },
+    {
+        "question":    "Who was the man of the match in Cricket World Cup Final of 1983 ?",
+        "optionOne":   "Sunil Gavaskar",
+        "optionTwo":   "Mohinder Amarnath",
+        "optionThree": "Kapil Dev",
+        "optionFour":  "Sandeep Patil",
+        "rightAnswer": "optionTwo",
+        "audiencePoll":"5, 60, 18, 15, 5",
+        "amount":      "3 Crore",
+        "information": "Mohinder Amarnath was the Man of the Match in the semifinal against England and in the final against the West Indies."
+    },
+    {
+        "question":    "Which Country Will Be Hosting The Olympics In The Year 2020 ?",
+        "optionOne":   "Japan",
+        "optionTwo":   "South Korea",
+        "optionThree": "South Africa",
+        "optionFour":  "USA",
+        "rightAnswer": "optionOne",
+        "audiencePoll":"50, 15, 10, 15, 10",
+        "amount":      "5 Crore",
+        "information": "Olympics in 2020 has been awarded to Tokyo, which was chosen over fellow Candidate Cities Istanbul and Madrid after two rounds of voting."
+    },
+    {
+        "question":    "Who Is Known As The Founder Of The Social Networking Site, Facebook apart from Mark Zuckerberg ?",
+        "optionOne":   "Andrew McCollum",
+        "optionTwo":   "Chris Hughes",
+        "optionThree": "Eduardo Saverin",
+        "optionFour":  "Dustin Moskovitz",
+        "rightAnswer": "optionThree",
+        "audiencePoll":"10, 15, 50, 15, 10",
+        "amount":      "7 Crore",
+        "information": "Eduardo Luiz Saverin is a Brazilian entrepreneur. Saverin is one of the co-founders of Facebook. In 2012, he owned 53 million Facebook shares, valued at approximately $2 billion at the time."
     }
+  ]
+}

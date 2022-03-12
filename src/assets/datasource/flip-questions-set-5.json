@@ -1,10 +1,10 @@
 {
-    "question":     "Who was the first Field Marshal of India ?",
-    "optionOne":    "Vaidya",
-    "optionTwo":    "S.H.F.J. Manekshaw",
-    "optionThree":  "K.M. Cariappa",
-    "optionFour":   "Sunderji",
-    "rightAnswer":  "optionTwo",
-    "audiencePoll": "2, 88, 5, 5, 0",
-    "information": "Sam Manekshaw was the first field marshal of India, and was conferred the rank on 1 January 1973. The second was Kodandera M. Cariappa, who was conferred the rank on 15 January 1986. Field marshal is equivalent to an admiral of the fleet in the Indian Navy and a Marshal of the Indian Air Force in the Indian Air Force."
+    "question":     "What is the full form of CD-ROM ?",
+    "optionOne":    "Compactable Data - Read Only Memory",
+    "optionTwo":    "Compact Data - Read Only Memory",
+    "optionThree":  "Compact Disk - Read Only Memory",
+    "optionFour":   "Compactable Disk - Read Only Memory",
+    "rightAnswer":  "optionThree",
+    "audiencePoll": "2, 5, 88, 5, 0",
+    "information": "A CD-ROM is a CD that can be read by a computer with an optical drive. The \"ROM\" part of the term means the data on the disc is \"read-only,\" or cannot be altered or erased."
 }
